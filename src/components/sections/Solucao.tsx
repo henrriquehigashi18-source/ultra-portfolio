@@ -1,0 +1,84 @@
+import { home } from "@/content/home";
+
+const icons: Record<string, React.ReactNode> = {
+  search: (
+    <>
+      <circle cx="11" cy="11" r="7" />
+      <path d="m21 21-4.35-4.35" />
+    </>
+  ),
+  chat: (
+    <path d="M21 12c0 4.418-4.03 8-9 8-1.02 0-2-.14-2.91-.4L4 21l1.48-3.86C4.55 15.86 4 14 4 12c0-4.418 4.03-8 8-8s9 3.582 9 8z" />
+  ),
+  clock: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </>
+  ),
+  calendar: (
+    <>
+      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <path d="M16 3v4M8 3v4M3 11h18" />
+    </>
+  ),
+};
+
+export default function Solucao() {
+  const { solucao } = home;
+  return (
+    <section className="bg-zinc-50">
+      <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+        <h2 className="max-w-3xl text-3xl font-black tracking-tight sm:text-4xl">
+          {solucao.title}
+        </h2>
+        <p className="mt-4 max-w-2xl text-lg text-zinc-600">{solucao.intro}</p>
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {solucao.items.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-2xl border border-zinc-200 bg-white p-6"
+            >
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand/10">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-6 w-6 text-brand-deep"
+                  aria-hidden="true"
+                >
+                  {icons[item.icon]}
+                </svg>
+              </span>
+              <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
+              <p className="mt-2 leading-relaxed text-zinc-600">{item.body}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 rounded-3xl bg-ink p-8 sm:p-10">
+          <p className="text-xl font-bold text-white sm:text-2xl">
+            {solucao.diferencial.lead}{" "}
+            <span className="font-medium text-zinc-300">
+              {solucao.diferencial.body}
+            </span>
+          </p>
+          <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-lg font-bold text-white sm:text-xl">
+            {solucao.diferencial.steps.map((step, i) => (
+              <span key={step} className="inline-flex items-center gap-3">
+                {i > 0 && (
+                  <span aria-hidden="true" className="text-brand">
+                    →
+                  </span>
+                )}
+                {step}
+              </span>
+            ))}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
