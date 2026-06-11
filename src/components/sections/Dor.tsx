@@ -14,7 +14,7 @@ export default function Dor() {
               key={item.title}
               className="rounded-2xl border border-zinc-200 bg-white p-6"
             >
-              <span aria-hidden="true" className="text-4xl font-black text-brand">
+              <span aria-hidden="true" className="text-4xl font-black text-brand-deep">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-3 text-lg font-bold leading-snug">{item.title}</h3>

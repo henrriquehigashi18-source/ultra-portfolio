@@ -21,26 +21,26 @@ export default function Casos() {
               <h3 className="mt-1 text-xl font-black">{caso.name}</h3>
               <dl className="mt-5 flex grow flex-col gap-4">
                 <div>
-                  <dt className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                  <dt className="text-xs font-bold uppercase tracking-wider text-zinc-500">
                     O contexto
                   </dt>
-                  <dd className="mt-1 text-sm leading-relaxed text-zinc-600">
+                  <dd className="mt-1 text-base leading-relaxed text-zinc-600">
                     {caso.contexto}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                  <dt className="text-xs font-bold uppercase tracking-wider text-zinc-500">
                     O que eu fiz
                   </dt>
-                  <dd className="mt-1 text-sm leading-relaxed text-zinc-600">
+                  <dd className="mt-1 text-base leading-relaxed text-zinc-600">
                     {caso.fiz}
                   </dd>
                 </div>
                 <div className="mt-auto border-l-4 border-brand pl-4">
-                  <dt className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                  <dt className="text-xs font-bold uppercase tracking-wider text-zinc-500">
                     O resultado
                   </dt>
-                  <dd className="mt-1 text-sm leading-relaxed text-zinc-600">
+                  <dd className="mt-1 text-base leading-relaxed text-zinc-600">
                     {caso.resultado}
                   </dd>
                   <dd className="mt-2 text-lg font-black leading-snug">

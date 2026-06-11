@@ -72,7 +72,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <p className="mt-8 border-t border-white/10 pt-6 text-sm text-zinc-500">
+        <p className="mt-8 border-t border-white/10 pt-6 text-sm text-zinc-400">
           © {new Date().getFullYear()} BL Swell. Todos os direitos reservados.
         </p>
       </div>

@@ -28,7 +28,8 @@ export default function Logo({ dark = false }: LogoProps) {
       <span
         className={`text-xl font-black tracking-tight ${dark ? "text-white" : "text-ink"}`}
       >
-        BL<span className="text-brand">Swell</span>
+        {/* No fundo claro o laranja puro reprova contraste AA; brand-deep passa (3.55:1, texto grande) */}
+        BL<span className={dark ? "text-brand" : "text-brand-deep"}>Swell</span>
       </span>
     </span>
   );

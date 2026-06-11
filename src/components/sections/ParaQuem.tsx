@@ -38,7 +38,7 @@ export default function ParaQuem() {
               className="flex h-full flex-col justify-center rounded-2xl border-2 border-dashed border-zinc-300 p-6 transition-colors hover:border-brand"
             >
               <h3 className="text-lg font-bold">{paraQuem.outro.title}</h3>
-              <p className="mt-1 font-semibold text-brand-deep">
+              <p className="mt-1 font-semibold">
                 {paraQuem.outro.body} <span aria-hidden="true">→</span>
               </p>
             </a>
