@@ -3,22 +3,24 @@ import { home } from "@/content/home";
 export default function Dor() {
   const { dor } = home;
   return (
-    <section className="bg-white">
-      <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-        <h2 className="max-w-2xl text-3xl font-black tracking-tight sm:text-4xl">
+    <section className="bg-night">
+      <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
+        <h2 className="max-w-2xl text-3xl font-[360] tracking-[0.01em] text-starlight sm:text-4xl">
           {dor.title}
         </h2>
-        <div className="mt-10 grid gap-5 sm:grid-cols-3">
+        <div className="mt-12 grid gap-px sm:grid-cols-3 sm:gap-6">
           {dor.items.map((item, i) => (
             <article
               key={item.title}
-              className="rounded-2xl border border-zinc-200 bg-white p-6"
+              className="border-t border-lead/40 py-8 sm:border sm:p-7"
             >
-              <span aria-hidden="true" className="text-4xl font-black text-brand-deep">
+              <span aria-hidden="true" className="text-4xl font-[360] text-ghost">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-3 text-lg font-bold leading-snug">{item.title}</h3>
-              <p className="mt-3 leading-relaxed text-zinc-600">{item.body}</p>
+              <h3 className="mt-3 text-lg font-[480] leading-snug text-starlight">
+                {item.title}
+              </h3>
+              <p className="mt-3 leading-relaxed text-silver">{item.body}</p>
             </article>
           ))}
         </div>

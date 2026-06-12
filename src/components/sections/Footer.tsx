@@ -6,12 +6,14 @@ import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 export default function Footer() {
   const { footer } = home;
   return (
-    <footer className="border-t border-white/10 bg-ink">
-      <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8">
+    <footer className="border-t border-lead/30 bg-deep">
+      <div className="mx-auto w-full max-w-[1200px] px-5 py-12 sm:px-8">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <Logo dark />
-            <p className="mt-2 text-sm text-zinc-400">{footer.tagline}</p>
+            <Logo />
+            <p className="mt-2 text-sm tracking-[0.02em] text-silver">
+              {footer.tagline}
+            </p>
           </div>
           <ul className="space-y-1">
             <li>
@@ -19,9 +21,9 @@ export default function Footer() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2.5 text-zinc-300 transition-colors hover:text-white"
+                className="inline-flex min-h-11 items-center gap-2.5 text-silver transition-colors hover:text-starlight"
               >
-                <WhatsAppIcon className="h-5 w-5 text-brand" />
+                <WhatsAppIcon className="h-5 w-5 text-ghost" />
                 {footer.whatsappLabel}
               </a>
             </li>
@@ -30,7 +32,7 @@ export default function Footer() {
                 href={footer.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2.5 text-zinc-300 transition-colors hover:text-white"
+                className="inline-flex min-h-11 items-center gap-2.5 text-silver transition-colors hover:text-starlight"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -39,7 +41,7 @@ export default function Footer() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-5 w-5 text-brand"
+                  className="h-5 w-5 text-ghost"
                   aria-hidden="true"
                 >
                   <rect x="2" y="2" width="20" height="20" rx="5" />
@@ -52,7 +54,7 @@ export default function Footer() {
             <li>
               <a
                 href={`mailto:${footer.email}`}
-                className="inline-flex min-h-11 items-center gap-2.5 text-zinc-300 transition-colors hover:text-white"
+                className="inline-flex min-h-11 items-center gap-2.5 text-silver transition-colors hover:text-starlight"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -61,7 +63,7 @@ export default function Footer() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-5 w-5 text-brand"
+                  className="h-5 w-5 text-ghost"
                   aria-hidden="true"
                 >
                   <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -72,7 +74,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <p className="mt-8 border-t border-white/10 pt-6 text-sm text-zinc-400">
+        <p className="mt-8 border-t border-lead/30 pt-6 text-sm tracking-[0.02em] text-silver">
           © {new Date().getFullYear()} BL Swell. Todos os direitos reservados.
         </p>
       </div>

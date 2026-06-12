@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #1a1a1e;
-  --color-brand: #f97316;
-  --color-brand-deep: #ea580c;
+  /* Mercury — Mountain Top Command Center (extraído de mercury.com) */
+  --color-mercury: #5266eb;
+  --color-ghost: #cdddff;
+  --color-deep: #171721;
+  --color-night: #1e1e2a;
+  --color-graphite: #272735;
+  --color-lead: #70707d;
+  --color-starlight: #ededf3;
+  --color-silver: #c3c3cc;
 }
 
 @theme inline {
@@ -11,11 +17,11 @@
 }
 
 body {
-  background: #ffffff;
-  color: var(--color-ink);
+  background: var(--color-night);
+  color: var(--color-starlight);
 }
 
 ::selection {
-  background: var(--color-brand);
-  color: var(--color-ink);
+  background: var(--color-mercury);
+  color: #ffffff;
 }

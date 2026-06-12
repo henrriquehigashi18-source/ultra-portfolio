@@ -27,19 +27,16 @@ const icons: Record<string, React.ReactNode> = {
 export default function Solucao() {
   const { solucao } = home;
   return (
-    <section className="bg-zinc-50">
-      <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-        <h2 className="max-w-3xl text-3xl font-black tracking-tight sm:text-4xl">
+    <section className="border-t border-lead/20 bg-night">
+      <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
+        <h2 className="max-w-3xl text-3xl font-[360] tracking-[0.01em] text-starlight sm:text-4xl">
           {solucao.title}
         </h2>
-        <p className="mt-4 max-w-2xl text-lg text-zinc-600">{solucao.intro}</p>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
+        <p className="mt-4 max-w-2xl text-lg text-silver">{solucao.intro}</p>
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
           {solucao.items.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-2xl border border-zinc-200 bg-white p-6"
-            >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand/10">
+            <article key={item.title} className="border border-lead/40 p-7">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-graphite">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -47,29 +44,27 @@ export default function Solucao() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-6 w-6 text-brand-deep"
+                  className="h-6 w-6 text-ghost"
                   aria-hidden="true"
                 >
                   {icons[item.icon]}
                 </svg>
               </span>
-              <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
-              <p className="mt-2 leading-relaxed text-zinc-600">{item.body}</p>
+              <h3 className="mt-5 text-lg font-[480] text-starlight">{item.title}</h3>
+              <p className="mt-2 leading-relaxed text-silver">{item.body}</p>
             </article>
           ))}
         </div>
-        <div className="mt-8 rounded-3xl bg-ink p-8 sm:p-10">
-          <p className="text-xl font-bold text-white sm:text-2xl">
+        <div className="mt-10 rounded-[4px] bg-graphite p-8 sm:p-10">
+          <p className="text-xl font-[480] text-starlight sm:text-2xl">
             {solucao.diferencial.lead}{" "}
-            <span className="font-medium text-zinc-300">
-              {solucao.diferencial.body}
-            </span>
+            <span className="font-[360] text-silver">{solucao.diferencial.body}</span>
           </p>
-          <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-lg font-bold text-white sm:text-xl">
+          <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-lg font-[480] text-starlight sm:text-xl">
             {solucao.diferencial.steps.map((step, i) => (
               <span key={step} className="inline-flex items-center gap-3">
                 {i > 0 && (
-                  <span aria-hidden="true" className="text-brand">
+                  <span aria-hidden="true" className="text-ghost">
                     →
                   </span>
                 )}

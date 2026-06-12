@@ -26,7 +26,7 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Iniciar conversa no WhatsApp"
-      className={`fixed right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-brand text-ink shadow-xl shadow-ink/25 transition-all duration-300 hover:bg-brand-deep ${
+      className={`fixed right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-mercury text-white transition-all duration-300 hover:bg-mercury/90 ${
         visible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-24 opacity-0"

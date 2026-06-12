@@ -17,7 +17,7 @@ export default function WhatsAppButton({
       href={whatsappLink(message)}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-brand px-8 text-lg font-bold text-ink shadow-lg shadow-brand/30 transition duration-200 hover:scale-[1.02] hover:bg-brand-deep active:scale-[0.98] ${className}`}
+      className={`inline-flex min-h-14 items-center justify-center gap-3 rounded-[32px] bg-mercury px-8 text-lg font-[480] text-white transition duration-200 hover:bg-mercury/90 active:scale-[0.98] ${className}`}
     >
       <WhatsAppIcon className="h-6 w-6 shrink-0" />
       {label}

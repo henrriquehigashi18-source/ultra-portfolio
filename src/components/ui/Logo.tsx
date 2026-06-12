@@ -7,29 +7,23 @@ export function LogoMark({ className }: LogoMarkProps) {
     <svg viewBox="-8 6 150 82" fill="none" className={className} aria-hidden="true">
       <path
         d="M0 78 C 14 78, 16 62, 28 62 C 40 62, 42 78, 54 78 C 66 78, 68 46, 80 46 C 92 46, 94 78, 106 78 C 118 78, 120 18, 132 18"
-        stroke="#F97316"
+        stroke="#CDDDFF"
         strokeWidth="9"
         strokeLinecap="round"
       />
-      <circle cx="132" cy="18" r="7" fill="#F97316" />
+      <circle cx="132" cy="18" r="7" fill="#CDDDFF" />
     </svg>
   );
 }
 
-type LogoProps = {
-  /** Cor do "BL" — grafite no fundo claro, branco no rodapé escuro */
-  dark?: boolean;
-};
-
-export default function Logo({ dark = false }: LogoProps) {
+export default function Logo() {
   return (
     <span className="inline-flex items-center gap-2.5">
       <LogoMark className="h-7 w-auto" />
-      <span
-        className={`text-xl font-black tracking-tight ${dark ? "text-white" : "text-ink"}`}
-      >
-        {/* No fundo claro o laranja puro reprova contraste AA; brand-deep passa (3.55:1, texto grande) */}
-        BL<span className={dark ? "text-brand" : "text-brand-deep"}>Swell</span>
+      {/* Contraste por peso, não por cor: o azul Mercury é exclusivo dos CTAs */}
+      <span className="text-xl tracking-[0.01em] text-starlight">
+        <span className="font-[530]">BL</span>
+        <span className="font-[360]">Swell</span>
       </span>
     </span>
   );
