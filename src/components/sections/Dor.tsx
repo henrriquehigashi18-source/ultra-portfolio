@@ -1,14 +1,17 @@
 import { home } from "@/content/home";
+import ScrollReveal from "@/components/animations/ScrollReveal";
 
 export default function Dor() {
   const { dor } = home;
   return (
     <section className="bg-night">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
-        <h2 className="max-w-2xl text-3xl font-[360] tracking-[0.01em] text-starlight sm:text-4xl">
-          {dor.title}
-        </h2>
-        <div className="mt-12 grid gap-px sm:grid-cols-3 sm:gap-6">
+        <ScrollReveal>
+          <h2 className="max-w-2xl text-3xl font-[360] tracking-[0.01em] text-starlight sm:text-4xl">
+            {dor.title}
+          </h2>
+        </ScrollReveal>
+        <ScrollReveal stagger className="mt-12 grid gap-px sm:grid-cols-3 sm:gap-6">
           {dor.items.map((item, i) => (
             <article
               key={item.title}
@@ -23,7 +26,7 @@ export default function Dor() {
               <p className="mt-3 leading-relaxed text-silver">{item.body}</p>
             </article>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

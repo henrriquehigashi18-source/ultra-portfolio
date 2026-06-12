@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { home } from "@/content/home";
+import ScrollReveal from "@/components/animations/ScrollReveal";
 
 export default function SobreMim() {
   const { sobreMim } = home;
   return (
     <section className="border-t border-lead/20 bg-night">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
-        <div className="grid items-center gap-10 md:grid-cols-[minmax(0,320px)_1fr]">
+        <ScrollReveal className="grid items-center gap-10 md:grid-cols-[minmax(0,320px)_1fr]">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-xs overflow-hidden rounded-[4px] md:mx-0">
             <Image
               src="/paulo-henrique.jpeg"
@@ -48,7 +49,7 @@ export default function SobreMim() {
               ))}
             </ul>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

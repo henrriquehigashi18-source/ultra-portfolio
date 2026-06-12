@@ -1,4 +1,5 @@
 import { home } from "@/content/home";
+import ScrollReveal from "@/components/animations/ScrollReveal";
 
 const icons: Record<string, React.ReactNode> = {
   search: (
@@ -29,11 +30,13 @@ export default function Solucao() {
   return (
     <section className="border-t border-lead/20 bg-night">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
-        <h2 className="max-w-3xl text-3xl font-[360] tracking-[0.01em] text-starlight sm:text-4xl">
-          {solucao.title}
-        </h2>
-        <p className="mt-4 max-w-2xl text-lg text-silver">{solucao.intro}</p>
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <ScrollReveal>
+          <h2 className="max-w-3xl text-3xl font-[360] tracking-[0.01em] text-starlight sm:text-4xl">
+            {solucao.title}
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-silver">{solucao.intro}</p>
+        </ScrollReveal>
+        <ScrollReveal stagger className="mt-12 grid gap-6 md:grid-cols-2">
           {solucao.items.map((item) => (
             <article key={item.title} className="border border-lead/40 p-7">
               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-graphite">
@@ -54,7 +57,8 @@ export default function Solucao() {
               <p className="mt-2 leading-relaxed text-silver">{item.body}</p>
             </article>
           ))}
-        </div>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
         <div className="mt-10 rounded-[4px] bg-graphite p-8 sm:p-10">
           <p className="text-xl font-[480] text-starlight sm:text-2xl">
             {solucao.diferencial.lead}{" "}
@@ -73,6 +77,7 @@ export default function Solucao() {
             ))}
           </p>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

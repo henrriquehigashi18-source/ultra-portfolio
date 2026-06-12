@@ -1,14 +1,17 @@
 import { home } from "@/content/home";
+import ScrollReveal from "@/components/animations/ScrollReveal";
 
 export default function ComoFunciona() {
   const { comoFunciona } = home;
   return (
     <section className="border-t border-lead/20 bg-night">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
-        <h2 className="text-3xl font-[360] tracking-[0.01em] text-starlight sm:text-4xl">
-          {comoFunciona.title}
-        </h2>
-        <ol className="mt-12 grid gap-10 sm:grid-cols-3">
+        <ScrollReveal>
+          <h2 className="text-3xl font-[360] tracking-[0.01em] text-starlight sm:text-4xl">
+            {comoFunciona.title}
+          </h2>
+        </ScrollReveal>
+        <ScrollReveal stagger className="mt-12 grid gap-10 sm:grid-cols-3">
           {comoFunciona.steps.map((step, i) => (
             <li key={step.title}>
               <span
@@ -21,7 +24,7 @@ export default function ComoFunciona() {
               <p className="mt-2 leading-relaxed text-silver">{step.body}</p>
             </li>
           ))}
-        </ol>
+        </ScrollReveal>
       </div>
     </section>
   );
