@@ -28,56 +28,72 @@ const icons: Record<string, React.ReactNode> = {
 export default function Solucao() {
   const { solucao } = home;
   return (
-    <section className="border-t border-lead/20 bg-night">
+    <section id="servicos" className="bg-night">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
-        <ScrollReveal>
-          <h2 className="max-w-3xl text-3xl font-[360] tracking-[0.01em] text-starlight sm:text-4xl">
-            {solucao.title}
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg text-silver">{solucao.intro}</p>
+        <ScrollReveal className="text-center">
+          <h2 className="text-3xl font-[700] text-starlight sm:text-4xl">Serviços</h2>
+          <span aria-hidden="true" className="mx-auto mt-3 block h-[3px] w-12 rounded bg-mercury" />
         </ScrollReveal>
-        <ScrollReveal stagger className="mt-12 grid gap-6 md:grid-cols-2">
-          {solucao.items.map((item) => (
-            <article key={item.title} className="border border-lead/40 p-7">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-graphite">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-6 w-6 text-ghost"
-                  aria-hidden="true"
-                >
-                  {icons[item.icon]}
-                </svg>
-              </span>
-              <h3 className="mt-5 text-lg font-[480] text-starlight">{item.title}</h3>
-              <p className="mt-2 leading-relaxed text-silver">{item.body}</p>
-            </article>
-          ))}
-        </ScrollReveal>
-        <ScrollReveal delay={0.1}>
-        <div className="mt-10 rounded-[4px] bg-graphite p-8 sm:p-10">
-          <p className="text-xl font-[480] text-starlight sm:text-2xl">
-            {solucao.diferencial.lead}{" "}
-            <span className="font-[360] text-silver">{solucao.diferencial.body}</span>
-          </p>
-          <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-lg font-[480] text-starlight sm:text-xl">
-            {solucao.diferencial.steps.map((step, i) => (
-              <span key={step} className="inline-flex items-center gap-3">
-                {i > 0 && (
-                  <span aria-hidden="true" className="text-ghost">
-                    →
+
+        <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+          <ScrollReveal>
+            <h3 className="text-2xl font-[700] leading-snug text-starlight sm:text-3xl">
+              {solucao.title}
+            </h3>
+            <p className="mt-4 max-w-xl text-lg leading-relaxed text-silver">
+              {solucao.intro}
+            </p>
+            <div className="mt-8 rounded-2xl bg-graphite p-7">
+              <p className="text-lg font-[700] text-starlight">
+                {solucao.diferencial.lead}{" "}
+                <span className="font-[400] text-silver">{solucao.diferencial.body}</span>
+              </p>
+              <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-lg font-[700] text-starlight">
+                {solucao.diferencial.steps.map((step, i) => (
+                  <span key={step} className="inline-flex items-center gap-3">
+                    {i > 0 && (
+                      <span aria-hidden="true" className="text-mercury">
+                        →
+                      </span>
+                    )}
+                    {step}
                   </span>
-                )}
-                {step}
-              </span>
-            ))}
-          </p>
+                ))}
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="relative">
+            <span
+              aria-hidden="true"
+              className="absolute bottom-7 left-7 top-7 border-l border-dashed border-lead/60"
+            />
+            <ScrollReveal stagger className="flex flex-col gap-10">
+              {solucao.items.map((item) => (
+                <article key={item.title} className="relative flex gap-5">
+                  <span className="z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-mercury">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-6 w-6 text-white"
+                      aria-hidden="true"
+                    >
+                      {icons[item.icon]}
+                    </svg>
+                  </span>
+                  <div>
+                    <h4 className="text-lg font-[700] text-starlight">{item.title}</h4>
+                    <p className="mt-1.5 leading-relaxed text-silver">{item.body}</p>
+                  </div>
+                </article>
+              ))}
+            </ScrollReveal>
+          </div>
         </div>
-        </ScrollReveal>
       </div>
     </section>
   );

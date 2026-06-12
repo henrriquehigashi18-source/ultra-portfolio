@@ -2,13 +2,24 @@
 // reaproveitam os mesmos componentes de seção com um arquivo irmão deste.
 
 export const home = {
+  nav: {
+    links: [
+      { label: "Início", href: "#hero" },
+      { label: "Serviços", href: "#servicos" },
+      { label: "Projetos", href: "#projetos" },
+      { label: "Como funciona", href: "#como-funciona" },
+      { label: "Contato", href: "#contato" },
+    ],
+    cta: "Falar comigo",
+  },
+
   hero: {
-    headlineStart:
-      "Agora mesmo, alguém está procurando no Google o que o seu negócio oferece.",
-    headlineEmphasis: "E está encontrando o seu concorrente.",
-    subheadline:
-      "Eu crio a presença digital que coloca o seu negócio nessa busca: site profissional com captação e agendamento automáticos pelo WhatsApp — que responde, tira dúvida e marca horário até quando você está ocupado.",
-    cta: "Falar com o Paulo no WhatsApp",
+    eyebrow: "Presença digital para negócios locais",
+    headline: ["Sites, captação", "& agendamento", "automático"],
+    lead:
+      "Agora mesmo, alguém está procurando no Google o que o seu negócio oferece — e está encontrando o seu concorrente. Eu crio a presença digital que muda isso: site profissional com captação e agendamento automáticos pelo WhatsApp.",
+    cta: "Falar com o Paulo",
+    ctaSecondary: "Ver projetos",
     trust: "Resposta em até 24h úteis · Diagnóstico gratuito, sem compromisso",
   },
 

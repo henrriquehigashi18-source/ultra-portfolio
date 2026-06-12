@@ -6,7 +6,7 @@ import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 export default function Footer() {
   const { footer } = home;
   return (
-    <footer className="border-t border-lead/30 bg-deep">
+    <footer className="border-t border-lead/20 bg-deep">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-12 sm:px-8">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
@@ -74,7 +74,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <p className="mt-8 border-t border-lead/30 pt-6 text-sm tracking-[0.02em] text-silver">
+        <p className="mt-8 border-t border-lead/20 pt-6 text-sm tracking-[0.02em] text-silver">
           © {new Date().getFullYear()} BL Swell. Todos os direitos reservados.
         </p>
       </div>

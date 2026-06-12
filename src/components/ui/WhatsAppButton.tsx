@@ -17,10 +17,11 @@ export default function WhatsAppButton({
       href={whatsappLink(message)}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex min-h-14 items-center justify-center gap-3 rounded-[32px] bg-mercury px-8 text-lg font-[480] text-white transition duration-200 hover:bg-mercury/90 active:scale-[0.98] ${className}`}
+      className={`inline-flex min-h-13 items-center justify-center gap-2.5 rounded-lg bg-mercury px-7 text-base font-[600] text-white transition duration-200 hover:bg-[#e84510] active:scale-[0.98] ${className}`}
     >
-      <WhatsAppIcon className="h-6 w-6 shrink-0" />
+      <WhatsAppIcon className="h-5 w-5 shrink-0" />
       {label}
+      <span aria-hidden="true" className="text-sm">↗</span>
     </a>
   );
 }

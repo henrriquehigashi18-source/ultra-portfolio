@@ -1,5 +1,4 @@
 import Hero from "@/components/sections/Hero";
-import ProvaSocial from "@/components/sections/ProvaSocial";
 import Dor from "@/components/sections/Dor";
 import Solucao from "@/components/sections/Solucao";
 import Casos from "@/components/sections/Casos";
@@ -29,7 +28,6 @@ export default function Home() {
     <>
       <Hero />
       <main>
-        <ProvaSocial />
         <Dor />
         <Solucao />
         <Casos />
