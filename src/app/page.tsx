@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <main>
+      <main id="conteudo">
         <Dor />
         <Solucao />
         <Casos />

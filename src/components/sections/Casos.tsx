@@ -1,5 +1,6 @@
 import { home } from "@/content/home";
 import ScrollReveal from "@/components/animations/ScrollReveal";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 export default function Casos() {
   const { casos } = home;
@@ -32,6 +33,9 @@ export default function Casos() {
               <p className="mt-3 text-lg font-[700] text-mercury">{caso.metric}</p>
             </article>
           ))}
+        </ScrollReveal>
+        <ScrollReveal className="mt-14 flex justify-center">
+          <WhatsAppButton label={casos.cta} message={casos.ctaMessage} />
         </ScrollReveal>
       </div>
     </section>

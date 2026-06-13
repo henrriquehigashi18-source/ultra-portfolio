@@ -28,7 +28,7 @@ export default function Hero() {
               <WhatsAppButton label={hero.cta} />
               <a
                 href="#projetos"
-                className="inline-flex min-h-13 items-center justify-center rounded-lg border border-lead/60 px-7 text-base font-[600] text-starlight transition-colors hover:border-silver"
+                className="inline-flex min-h-13 items-center justify-center rounded-lg border border-lead/60 px-7 text-base font-[600] text-starlight transition duration-200 hover:border-silver active:scale-[0.98]"
               >
                 {hero.ctaSecondary}
               </a>

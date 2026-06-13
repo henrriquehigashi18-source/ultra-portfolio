@@ -35,6 +35,12 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${manrope.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
+        <a
+          href="#conteudo"
+          className="sr-only z-50 rounded-lg bg-mercury px-4 py-2 font-[600] text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        >
+          Pular para o conteúdo
+        </a>
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

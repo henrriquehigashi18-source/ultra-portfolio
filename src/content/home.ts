@@ -86,6 +86,9 @@ export const home = {
     title: "Casos de sucesso",
     subtitle:
       "Segmentos diferentes, método igual: entender o negócio, remover o atrito e transformar interesse em conversa.",
+    cta: "Quero um resultado assim",
+    ctaMessage:
+      "Olá, Paulo! Vi os casos de sucesso no seu site e quero um resultado assim para o meu negócio.",
     // [PLACEHOLDER — os 3 resultados e métricas abaixo são fictícios: substituir pelos números reais de cada cliente]
     items: [
       {

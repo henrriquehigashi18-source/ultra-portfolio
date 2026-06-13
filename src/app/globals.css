@@ -25,3 +25,22 @@ body {
   background: var(--color-mercury);
   color: #ffffff;
 }
+
+/* Foco visível para navegação por teclado (WCAG 2.4.7) */
+:focus-visible {
+  outline: 2px solid var(--color-mercury);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Remove o delay de 300ms no toque mobile */
+a,
+button {
+  touch-action: manipulation;
+}
+
+/* Âncoras não colam no topo da viewport */
+section[id],
+header[id] {
+  scroll-margin-top: 1.5rem;
+}

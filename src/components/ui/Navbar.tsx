@@ -14,7 +14,7 @@ export default function Navbar() {
           <li key={link.href}>
             <a
               href={link.href}
-              className="text-sm font-[500] tracking-[0.04em] text-silver uppercase transition-colors hover:text-starlight"
+              className="inline-block py-2 text-sm font-[500] tracking-[0.04em] text-silver uppercase transition-colors hover:text-starlight"
             >
               {link.label}
             </a>
@@ -25,7 +25,7 @@ export default function Navbar() {
         href={whatsappLink()}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex min-h-10 items-center rounded-lg border border-mercury/60 px-4 text-sm font-[600] text-starlight transition-colors hover:bg-mercury hover:text-white md:hidden"
+        className="inline-flex min-h-11 items-center rounded-lg border border-mercury/60 px-4 text-sm font-[600] text-starlight transition-colors hover:bg-mercury hover:text-white active:scale-[0.98]"
       >
         {nav.cta}
       </a>
