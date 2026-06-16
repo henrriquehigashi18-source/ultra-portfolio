@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { home } from "@/content/home";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
@@ -17,13 +18,14 @@ export default function Casos() {
         <ScrollReveal stagger className="mt-12 grid gap-8 md:grid-cols-3">
           {casos.items.map((caso) => (
             <article key={caso.name} className="group">
-              {/* Slot de imagem — substituir por <Image> quando tiver o screenshot do projeto */}
-              <div className="flex aspect-[16/11] w-full items-center justify-center overflow-hidden rounded-xl bg-graphite transition-transform duration-300 group-hover:scale-[1.02]">
-                <svg viewBox="0 0 48 48" fill="none" className="h-10 w-10 text-lead" aria-hidden="true">
-                  <rect x="4" y="10" width="40" height="28" rx="2" stroke="currentColor" strokeWidth="2" />
-                  <circle cx="16" cy="22" r="4" stroke="currentColor" strokeWidth="2" />
-                  <path d="m4 34 10-8 8 6 8-10 14 12" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-                </svg>
+              <div className="relative aspect-[16/11] w-full overflow-hidden rounded-xl bg-graphite transition-transform duration-300 group-hover:scale-[1.02]">
+                <Image
+                  src={caso.image}
+                  alt={`Screenshot do projeto ${caso.name}`}
+                  fill
+                  sizes="(min-width: 1024px) 360px, 90vw"
+                  className="object-cover object-top"
+                />
               </div>
               <p className="mt-5 text-xs font-[600] uppercase tracking-[0.15em] text-silver">
                 {caso.segment}

@@ -1,4 +1,4 @@
-// Toda a copy da home vive aqui. Páginas de nicho (/clinicas, /advogados)
+﻿// Toda a copy da home vive aqui. Páginas de nicho (/clinicas, /advogados)
 // reaproveitam os mesmos componentes de seção com um arquivo irmão deste.
 
 export const home = {
@@ -35,7 +35,7 @@ export const home = {
     title: "Você se reconhece em alguma dessas situações?",
     items: [
       {
-        title: "O cliente pesquisa “perto de mim” — e você não aparece",
+        title: 'O cliente pesquisa "perto de mim" — e você não aparece',
         body: "Quem não te encontra não compara preço nem qualidade. Simplesmente nunca fica sabendo que o seu negócio existe.",
       },
       {
@@ -94,19 +94,15 @@ export const home = {
       {
         name: "Vitrine de Relógios",
         segment: "E-commerce · relógios premium",
-        contexto:
-          "Uma revenda de relógios de alto valor vendia só pelo direct, e cada venda dependia de responder rápido na hora certa.",
-        fiz: "Criei uma vitrine premium em que cada relógio leva direto a uma conversa no WhatsApp, com o modelo já na mensagem.",
+        image: "/projects/site-relogios.png",
         resultado:
-          "As conversas passaram a chegar com o cliente decidido: em vez de “quanto custa?”, “quero esse”.",
+          'As conversas passaram a chegar com o cliente decidido: em vez de "quanto custa?", "quero esse".',
         metric: "3× mais conversas iniciadas pelo site",
       },
       {
         name: "Zaya Cacau",
         segment: "Doces artesanais",
-        contexto:
-          "Produto forte e história boa, mas sem um lugar que apresentasse a marca além do cardápio no Instagram.",
-        fiz: "Landing page com a história da marca em destaque e pedido direto pelo WhatsApp, pensada para datas comemorativas.",
+        image: "/projects/zaya-cacau.png",
         resultado:
           "As encomendas de datas passaram a chegar pelo site, com o pedido já montado na mensagem.",
         metric: "2× mais encomendas na primeira data comemorativa",
@@ -114,9 +110,7 @@ export const home = {
       {
         name: "Pro Telecom",
         segment: "Portal técnico · telecom",
-        contexto:
-          "A equipe técnica perdia horas toda semana em processos manuais e relatórios repetitivos.",
-        fiz: "Construí um sistema com fluxo guiado e relatórios automáticos, no padrão que o time já usava no dia a dia.",
+        image: "/projects/pro-telecom.png",
         resultado:
           "O retrabalho de planilha virou minutos, e a equipe voltou a focar no atendimento.",
         metric: "≈10 horas por semana liberadas",
