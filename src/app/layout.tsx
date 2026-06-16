@@ -1,15 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 
 export const viewport: Viewport = {
-  themeColor: "#1e1e2a",
+  themeColor: "#0e0e0e",
 };
 
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
+// Satoshi — corpo/UI (variável). Par premium da Clash Display.
+const satoshi = localFont({
+  src: "../fonts/Satoshi-Variable.woff2",
+  variable: "--font-satoshi",
+  weight: "300 900",
+  display: "swap",
+});
+
+// Clash Display — títulos/display (variável). Caráter de agência.
+const clashDisplay = localFont({
+  src: "../fonts/ClashDisplay-Variable.woff2",
+  variable: "--font-clash",
+  weight: "400 700",
   display: "swap",
 });
 
@@ -33,7 +43,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${manrope.variable} h-full antialiased`}>
+    <html
+      lang="pt-BR"
+      className={`${satoshi.variable} ${clashDisplay.variable} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col font-sans">
         <a
           href="#conteudo"

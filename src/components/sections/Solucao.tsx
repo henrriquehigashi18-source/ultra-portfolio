@@ -31,13 +31,15 @@ export default function Solucao() {
     <section id="servicos" className="bg-night">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
         <ScrollReveal className="text-center">
-          <h2 className="text-3xl font-[700] text-starlight sm:text-4xl">Serviços</h2>
+          <h2 className="font-display text-3xl font-[600] tracking-[-0.02em] text-starlight sm:text-4xl">
+            Serviços
+          </h2>
           <span aria-hidden="true" className="mx-auto mt-3 block h-[3px] w-12 rounded bg-mercury" />
         </ScrollReveal>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
           <ScrollReveal>
-            <h3 className="text-2xl font-[700] leading-snug text-starlight sm:text-3xl">
+            <h3 className="font-display text-2xl font-[600] leading-[1.1] tracking-[-0.02em] text-starlight sm:text-[2rem]">
               {solucao.title}
             </h3>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-silver">

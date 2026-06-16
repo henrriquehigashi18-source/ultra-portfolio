@@ -8,7 +8,7 @@ export default function ParaQuem() {
     <section className="bg-night">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
         <ScrollReveal>
-          <h2 className="max-w-2xl text-3xl font-[700] leading-tight text-starlight sm:text-4xl">
+          <h2 className="font-display max-w-2xl text-3xl font-[600] leading-tight tracking-[-0.02em] text-starlight sm:text-4xl">
             {paraQuem.title}
           </h2>
           <span aria-hidden="true" className="mt-3 block h-[3px] w-12 rounded bg-mercury" />

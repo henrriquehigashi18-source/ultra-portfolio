@@ -2,6 +2,7 @@ import Image from "next/image";
 import { home } from "@/content/home";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import ScrollReveal from "@/components/animations/ScrollReveal";
+import Magnetic from "@/components/animations/Magnetic";
 
 export default function CtaFinal() {
   const { ctaFinal, sobreMim } = home;
@@ -10,7 +11,7 @@ export default function CtaFinal() {
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
         <ScrollReveal className="grid items-center gap-12 lg:grid-cols-[1.3fr_1fr]">
           <div>
-            <h2 className="max-w-2xl text-3xl font-[700] leading-tight text-starlight sm:text-4xl lg:text-5xl">
+            <h2 className="font-display max-w-2xl text-3xl font-[600] leading-[1.05] tracking-[-0.025em] text-starlight sm:text-4xl lg:text-[3.25rem]">
               {ctaFinal.headline}
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-silver">
@@ -36,7 +37,9 @@ export default function CtaFinal() {
               ))}
             </ul>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <WhatsAppButton label={ctaFinal.cta} />
+              <Magnetic strength={0.4}>
+                <WhatsAppButton label={ctaFinal.cta} />
+              </Magnetic>
               <p className="text-sm tracking-[0.02em] text-silver">{ctaFinal.trust}</p>
             </div>
           </div>

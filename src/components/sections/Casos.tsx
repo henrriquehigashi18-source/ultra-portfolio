@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { home } from "@/content/home";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import CountUp from "@/components/animations/CountUp";
 
 export default function Casos() {
   const { casos } = home;
@@ -44,7 +45,7 @@ export default function Casos() {
       <div className="flex h-screen flex-col justify-center py-16">
         {/* Header */}
         <div className="mb-10 flex-shrink-0 px-5 sm:px-14">
-          <h2 className="text-3xl font-[700] text-starlight sm:text-4xl">
+          <h2 className="font-display text-3xl font-[600] tracking-[-0.02em] text-starlight sm:text-[2.75rem]">
             {casos.title}
           </h2>
           <span
@@ -83,15 +84,16 @@ export default function Casos() {
                 <p className="text-xs font-[600] uppercase tracking-[0.15em] text-silver/70">
                   {caso.segment}
                 </p>
-                <h3 className="mt-1.5 text-xl font-[700] leading-snug text-starlight">
+                <h3 className="font-display mt-1.5 text-2xl font-[600] leading-snug tracking-[-0.01em] text-starlight">
                   {caso.name}
                 </h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-silver">
                   {caso.solucao}
                 </p>
-                <p className="mt-3 text-base font-[700] text-mercury">
-                  {caso.metric}
-                </p>
+                <CountUp
+                  text={caso.metric}
+                  className="mt-3 block text-base font-[700] text-mercury"
+                />
               </div>
             </article>
           ))}

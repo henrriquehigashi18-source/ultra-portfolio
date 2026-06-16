@@ -7,7 +7,7 @@ export default function Dor() {
     <section className="bg-deep">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
         <ScrollReveal>
-          <h2 className="max-w-2xl text-3xl font-[700] leading-tight text-starlight sm:text-4xl">
+          <h2 className="font-display max-w-2xl text-3xl font-[600] leading-tight tracking-[-0.02em] text-starlight sm:text-4xl">
             {dor.title}
           </h2>
         </ScrollReveal>

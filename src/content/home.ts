@@ -14,10 +14,10 @@ export const home = {
   },
 
   hero: {
-    eyebrow: "Presença digital para negócios locais",
-    headline: ["Sites, captação", "& agendamento", "automático"],
+    eyebrow: "Estúdio digital · do RN para todo o Brasil",
+    headline: ["Presença digital", "que vira conversa."],
     lead:
-      "Agora mesmo, alguém está procurando no Google o que o seu negócio oferece — e está encontrando o seu concorrente. Eu crio a presença digital que muda isso: site profissional com captação e agendamento automáticos pelo WhatsApp.",
+      "Seu próximo cliente está procurando no Google agora. Eu construo o site que faz ele chamar no seu WhatsApp — com captação e agendamento no automático.",
     cta: "Falar com o Paulo",
     ctaSecondary: "Ver projetos",
     trust: "Resposta em até 24h úteis · Diagnóstico gratuito, sem compromisso",
@@ -50,7 +50,7 @@ export const home = {
   },
 
   solucao: {
-    title: "Não é só um site bonito. É o seu melhor vendedor — de plantão 24 horas.",
+    title: "Não é um site bonito. É o seu melhor vendedor — de plantão 24h.",
     intro:
       "O que eu monto para o seu negócio é o circuito completo: ser encontrado, conversar e agendar.",
     items: [
@@ -185,7 +185,7 @@ export const home = {
 
   ctaFinal: {
     headline: "A busca não para enquanto você decide.",
-    body: "Agora mesmo, o Google está mostrando alguém para o seu próximo cliente. A conversa para que esse alguém seja você começa com uma mensagem — e o diagnóstico é gratuito.",
+    body: "Neste momento, o Google está entregando o seu próximo cliente para alguém. Uma mensagem é o que separa esse alguém de você — e o diagnóstico é gratuito.",
     cta: "Iniciar conversa no WhatsApp",
     trust: "Resposta em até 24h úteis · Sem compromisso",
   },

@@ -23,7 +23,7 @@ export default function ComoFunciona() {
     <section id="como-funciona" className="bg-deep">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
         <ScrollReveal className="text-center">
-          <h2 className="text-3xl font-[700] text-starlight sm:text-4xl">
+          <h2 className="font-display text-3xl font-[600] tracking-[-0.02em] text-starlight sm:text-4xl">
             {comoFunciona.title}
           </h2>
           <span aria-hidden="true" className="mx-auto mt-3 block h-[3px] w-12 rounded bg-mercury" />
