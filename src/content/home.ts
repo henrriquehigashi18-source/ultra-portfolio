@@ -89,12 +89,13 @@ export const home = {
     cta: "Quero um resultado assim",
     ctaMessage:
       "Olá, Paulo! Vi os casos de sucesso no seu site e quero um resultado assim para o meu negócio.",
-    // [PLACEHOLDER — os 3 resultados e métricas abaixo são fictícios: substituir pelos números reais de cada cliente]
+    // [PLACEHOLDER — métricas abaixo são fictícias: substituir pelos números reais de cada cliente]
     items: [
       {
         name: "Vitrine de Relógios",
         segment: "E-commerce · relógios premium",
         image: "/projects/site-relogios.png",
+        solucao: "Mais conversas qualificadas — cliente chega decidido",
         resultado:
           'As conversas passaram a chegar com o cliente decidido: em vez de "quanto custa?", "quero esse".',
         metric: "3× mais conversas iniciadas pelo site",
@@ -103,6 +104,7 @@ export const home = {
         name: "Zaya Cacau",
         segment: "Doces artesanais",
         image: "/projects/zaya-cacau.png",
+        solucao: "Encomendas chegando com o pedido já montado na mensagem",
         resultado:
           "As encomendas de datas passaram a chegar pelo site, com o pedido já montado na mensagem.",
         metric: "2× mais encomendas na primeira data comemorativa",
@@ -111,9 +113,20 @@ export const home = {
         name: "Pro Telecom",
         segment: "Portal técnico · telecom",
         image: "/projects/pro-telecom.png",
+        solucao: "Horas de planilha que viraram minutos de sistema",
         resultado:
           "O retrabalho de planilha virou minutos, e a equipe voltou a focar no atendimento.",
         metric: "≈10 horas por semana liberadas",
+      },
+      {
+        // [PLACEHOLDER — substituir pelos dados reais do projeto VS Design]
+        name: "VS Design",
+        segment: "Design · identidade visual",
+        image: "/projects/vsdesign.png",
+        solucao: "Portfólio digital que transforma visita em contato direto",
+        resultado:
+          "O portfólio passou a funcionar como vitrine ativa, gerando contatos qualificados direto pelo site.",
+        metric: "[PLACEHOLDER — métrica real]",
       },
     ],
   },
