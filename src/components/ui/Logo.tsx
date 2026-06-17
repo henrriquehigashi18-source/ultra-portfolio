@@ -20,8 +20,8 @@ export default function Logo() {
   return (
     <span className="inline-flex items-center gap-2.5">
       <LogoMark className="h-7 w-auto" />
-      {/* Contraste por peso, não por cor: o azul Mercury é exclusivo dos CTAs */}
-      <span className="text-xl tracking-[0.01em] text-starlight">
+      {/* Cor herdada do pai — a navbar adapta entre hero claro e seções escuras */}
+      <span className="text-xl tracking-[0.01em] text-current">
         <span className="font-[530]">BL</span>
         <span className="font-[360]">Swell</span>
       </span>

@@ -23,6 +23,26 @@ export const home = {
     trust: "Resposta em até 24h úteis · Diagnóstico gratuito, sem compromisso",
   },
 
+  // Hero editorial (claro) — estilo referência: figura central, headline nas laterais.
+  heroEditorial: {
+    pillars: ["Design", "Confiança", "Henrique"],
+    // Cada item vira uma linha; `strong: true` recebe peso bold.
+    left: [
+      { text: "Se você", strong: false },
+      { text: "não confia", strong: false },
+      { text: "no ", strong: false, partial: "seu" },
+      { text: "trabalho,", strong: true },
+    ],
+    right: [
+      { text: "por que", strong: false },
+      { text: "o ", strong: false, partial: "cliente" },
+      { text: "confiaria?", strong: true },
+    ],
+    photo: "/hero-paulo.png",
+    photoAlt: "Paulo Henrique, fundador da BL Swell",
+    scrollCue: "Veja por que confiam em mim",
+  },
+
   // [PLACEHOLDER — depoimento fictício: substituir pelo depoimento real de cliente]
   provaSocial: {
     quote:
