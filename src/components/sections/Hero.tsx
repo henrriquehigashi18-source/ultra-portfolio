@@ -46,6 +46,8 @@ export default function Hero() {
     >
       <Navbar />
       <div className="mx-auto flex min-h-svh w-full max-w-[1200px] flex-col justify-between px-5 pb-8 pt-28 sm:px-8 sm:pb-10 sm:pt-32">
+        {/* Heading semântica única para SEO/leitor de tela (headline visual é decorativa) */}
+        <h1 className="sr-only">{h.ariaHeadline}</h1>
         {/* Moldura editorial — topo */}
         <div
           className="hero-fade flex items-center justify-between text-[0.7rem] font-[500] uppercase tracking-[0.32em] text-night/70 sm:text-xs"
@@ -59,7 +61,10 @@ export default function Hero() {
         {/* Composição central */}
         <div className="grid flex-1 items-center gap-y-8 py-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-x-2 lg:py-0">
           {/* Headline esquerda */}
-          <div className="order-1 text-center text-[2rem] leading-[1.04] tracking-[-0.01em] text-night sm:text-4xl lg:self-end lg:pb-16 lg:pr-4 lg:text-right lg:text-[2.7rem] xl:text-5xl">
+          <div
+            aria-hidden="true"
+            className="order-1 text-center text-[2rem] leading-[1.04] tracking-[-0.01em] text-night sm:text-4xl lg:self-end lg:pb-16 lg:pr-4 lg:text-right lg:text-[2.7rem] xl:text-5xl"
+          >
             <HeadlineLines segments={h.left} baseDelay={0.3} />
           </div>
 
@@ -81,14 +86,17 @@ export default function Hero() {
           </div>
 
           {/* Headline direita */}
-          <div className="order-3 text-center text-[2rem] leading-[1.04] tracking-[-0.01em] text-night sm:text-4xl lg:self-start lg:mt-[14%] lg:pl-4 lg:text-left lg:text-[2.7rem] xl:text-5xl">
+          <div
+            aria-hidden="true"
+            className="order-3 text-center text-[2rem] leading-[1.04] tracking-[-0.01em] text-night sm:text-4xl lg:self-start lg:mt-[14%] lg:pl-4 lg:text-left lg:text-[2.7rem] xl:text-5xl"
+          >
             <HeadlineLines segments={h.right} baseDelay={0.5} />
           </div>
         </div>
 
         {/* Moldura editorial — base + cue de scroll */}
         <div
-          className="hero-fade flex items-center justify-between text-[0.7rem] font-[500] uppercase tracking-[0.28em] text-night/40 sm:text-xs"
+          className="hero-fade flex items-center justify-between text-[0.7rem] font-[500] uppercase tracking-[0.28em] text-night/65 sm:text-xs"
           style={{ animationDelay: "0.9s" }}
         >
           <span>{footer.tagline}</span>

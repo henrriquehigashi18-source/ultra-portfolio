@@ -41,6 +41,9 @@ export const home = {
     photo: "/hero-paulo.png",
     photoAlt: "Paulo Henrique, fundador da BL Swell",
     scrollCue: "Veja por que confiam em mim",
+    // Heading semântica única (sr-only) — a headline visual é dividida/decorativa.
+    ariaHeadline:
+      "Se você não confia no seu trabalho, por que o cliente confiaria?",
   },
 
   // [PLACEHOLDER — depoimento fictício: substituir pelo depoimento real de cliente]
