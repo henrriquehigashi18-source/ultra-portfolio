@@ -78,6 +78,11 @@ export default function Hero() {
               sizes="(min-width: 1024px) 360px, 78vw"
               className="object-cover object-bottom"
             />
+            {/* Gradientes de fusão — fundem a foto com o fundo #edeced */}
+            <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#edeced] to-transparent" />
+            <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#edeced] to-transparent" />
+            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-10 h-12 bg-gradient-to-b from-[#edeced] to-transparent" />
+            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-[#edeced] to-transparent" />
             {/* Moldura editorial na frente — linha de topo no espaço claro acima da cabeça */}
             <div
               aria-hidden="true"
