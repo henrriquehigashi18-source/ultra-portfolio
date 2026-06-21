@@ -40,6 +40,11 @@ export const home = {
     ],
     photo: "/hero-paulo.png",
     photoAlt: "Paulo Henrique, fundador da BL Swell",
+    // Tagline com a última palavra animada (máquina de escrever rotativa)
+    taglineRotate: {
+      prefix: "Presença digital que vira",
+      words: ["conversa", "lead", "cliente", "venda", "faturamento", "lucro"],
+    },
     scrollCue: "Veja por que confiam em mim",
     // Heading semântica única (sr-only) — a headline visual é dividida/decorativa.
     ariaHeadline:

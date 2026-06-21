@@ -13,14 +13,18 @@
   --color-starlight: #f5f5f5;
   --color-silver: #a6a6a6;
 
+  /* Superfícies claras — paleta editorial do hero, aplicada a todo o site */
+  --color-canvas: #edeced;
+  --color-surface: #ffffff;
+
   /* Tipografia */
   --font-sans: var(--font-satoshi);
   --font-display: var(--font-clash);
 }
 
 body {
-  background: var(--color-night);
-  color: var(--color-starlight);
+  background: var(--color-canvas);
+  color: var(--color-night);
   font-family: var(--font-satoshi), system-ui, sans-serif;
   /* Grão sutil global — textura premium, remove o "plano" */
   position: relative;
@@ -33,7 +37,8 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.025;
+  opacity: 0.018;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -156,7 +161,27 @@ header[id] {
   animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+/* Cursor piscante da palavra rotativa (máquina de escrever) */
+@keyframes caretBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.rotating-caret {
+  display: inline-block;
+  margin-left: 1px;
+  font-weight: 400;
+  animation: caretBlink 1s steps(1) infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .rotating-caret {
+    animation: none;
+  }
   .link-underline::after {
     transition: none;
   }

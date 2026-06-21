@@ -28,10 +28,10 @@ const icons: Record<string, React.ReactNode> = {
 export default function Solucao() {
   const { solucao } = home;
   return (
-    <section id="servicos" className="bg-night">
+    <section id="servicos" className="bg-canvas">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
         <ScrollReveal className="text-center">
-          <h2 className="font-display text-3xl font-[600] tracking-[-0.02em] text-starlight sm:text-4xl">
+          <h2 className="font-display text-3xl font-[600] tracking-[-0.02em] text-night sm:text-4xl">
             Serviços
           </h2>
           <span aria-hidden="true" className="mx-auto mt-3 block h-[3px] w-12 rounded bg-mercury" />
@@ -39,18 +39,18 @@ export default function Solucao() {
 
         <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
           <ScrollReveal>
-            <h3 className="font-display text-2xl font-[600] leading-[1.1] tracking-[-0.02em] text-starlight sm:text-[2rem]">
+            <h3 className="font-display text-2xl font-[600] leading-[1.1] tracking-[-0.02em] text-night sm:text-[2rem]">
               {solucao.title}
             </h3>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-silver">
+            <p className="mt-4 max-w-xl text-lg leading-relaxed text-night/65">
               {solucao.intro}
             </p>
-            <div className="mt-8 rounded-2xl bg-graphite p-7">
-              <p className="text-lg font-[700] text-starlight">
+            <div className="mt-8 rounded-2xl border border-night/8 bg-surface p-7 shadow-[0_1px_2px_rgba(14,14,14,0.04)]">
+              <p className="text-lg font-[700] text-night">
                 {solucao.diferencial.lead}{" "}
-                <span className="font-[400] text-silver">{solucao.diferencial.body}</span>
+                <span className="font-[400] text-night/60">{solucao.diferencial.body}</span>
               </p>
-              <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-lg font-[700] text-starlight">
+              <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-lg font-[700] text-night">
                 {solucao.diferencial.steps.map((step, i) => (
                   <span key={step} className="inline-flex items-center gap-3">
                     {i > 0 && (
@@ -68,12 +68,12 @@ export default function Solucao() {
           <div className="relative">
             <span
               aria-hidden="true"
-              className="absolute bottom-7 left-7 top-7 border-l border-dashed border-lead/60"
+              className="absolute bottom-7 left-7 top-7 border-l border-dashed border-night/15"
             />
             <ScrollReveal stagger className="flex flex-col gap-10">
               {solucao.items.map((item) => (
                 <article key={item.title} className="relative flex gap-5">
-                  <span className="z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-mercury">
+                  <span className="z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-night/12 bg-surface shadow-[0_1px_2px_rgba(14,14,14,0.04)]">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -81,15 +81,15 @@ export default function Solucao() {
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="h-6 w-6 text-white"
+                      className="h-6 w-6 text-mercury"
                       aria-hidden="true"
                     >
                       {icons[item.icon]}
                     </svg>
                   </span>
                   <div>
-                    <h4 className="text-lg font-[700] text-starlight">{item.title}</h4>
-                    <p className="mt-1.5 leading-relaxed text-silver">{item.body}</p>
+                    <h4 className="text-lg font-[700] text-night">{item.title}</h4>
+                    <p className="mt-1.5 leading-relaxed text-night/65">{item.body}</p>
                   </div>
                 </article>
               ))}

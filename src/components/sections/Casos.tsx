@@ -41,18 +41,18 @@ export default function Casos() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="projetos" className="bg-night overflow-hidden">
+    <section ref={sectionRef} id="projetos" className="bg-canvas overflow-hidden">
       <div className="flex h-screen flex-col justify-center py-16">
         {/* Header */}
         <div className="mb-10 flex-shrink-0 px-5 sm:px-14">
-          <h2 className="font-display text-3xl font-[600] tracking-[-0.02em] text-starlight sm:text-[2.75rem]">
+          <h2 className="font-display text-3xl font-[600] tracking-[-0.02em] text-night sm:text-[2.75rem]">
             {casos.title}
           </h2>
           <span
             aria-hidden="true"
             className="mt-3 block h-[3px] w-12 rounded bg-mercury"
           />
-          <p className="mt-4 max-w-xl text-silver">{casos.subtitle}</p>
+          <p className="mt-4 max-w-xl text-night/65">{casos.subtitle}</p>
         </div>
 
         {/* Cards track */}

@@ -27,8 +27,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* Transição suave hero (claro) → seções escuras */}
-      <div aria-hidden="true" className="h-28 bg-gradient-to-b from-[#edeced] to-deep" />
       <main id="conteudo">
         <Dor />
         <Solucao />

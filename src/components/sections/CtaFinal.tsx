@@ -7,19 +7,19 @@ import Magnetic from "@/components/animations/Magnetic";
 export default function CtaFinal() {
   const { ctaFinal, sobreMim } = home;
   return (
-    <section id="contato" className="bg-deep">
+    <section id="contato" className="bg-canvas">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
         <ScrollReveal className="grid items-center gap-12 lg:grid-cols-[1.3fr_1fr]">
           <div>
-            <h2 className="font-display max-w-2xl text-3xl font-[600] leading-[1.05] tracking-[-0.025em] text-starlight sm:text-4xl lg:text-[3.25rem]">
+            <h2 className="font-display max-w-2xl text-3xl font-[600] leading-[1.05] tracking-[-0.025em] text-night sm:text-4xl lg:text-[3.25rem]">
               {ctaFinal.headline}
             </h2>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-silver">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-night/65">
               {ctaFinal.body}
             </p>
             <ul className="mt-7 space-y-3">
               {sobreMim.bullets.map((bullet) => (
-                <li key={bullet} className="flex items-center gap-3 font-[600] text-starlight">
+                <li key={bullet} className="flex items-center gap-3 font-[600] text-night">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -40,11 +40,11 @@ export default function CtaFinal() {
               <Magnetic strength={0.4}>
                 <WhatsAppButton label={ctaFinal.cta} />
               </Magnetic>
-              <p className="text-sm tracking-[0.02em] text-silver">{ctaFinal.trust}</p>
+              <p className="text-sm tracking-[0.02em] text-night/55">{ctaFinal.trust}</p>
             </div>
           </div>
           <div className="relative mx-auto hidden w-full max-w-sm lg:block">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-graphite">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-night/8 bg-surface shadow-[0_2px_8px_rgba(14,14,14,0.06)]">
               <Image
                 src="/paulo-henrique.jpeg"
                 alt={sobreMim.photoAlt}

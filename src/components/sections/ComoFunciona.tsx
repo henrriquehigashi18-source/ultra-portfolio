@@ -20,10 +20,10 @@ const icons = [
 export default function ComoFunciona() {
   const { comoFunciona } = home;
   return (
-    <section id="como-funciona" className="bg-deep">
+    <section id="como-funciona" className="bg-canvas">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
         <ScrollReveal className="text-center">
-          <h2 className="font-display text-3xl font-[600] tracking-[-0.02em] text-starlight sm:text-4xl">
+          <h2 className="font-display text-3xl font-[600] tracking-[-0.02em] text-night sm:text-4xl">
             {comoFunciona.title}
           </h2>
           <span aria-hidden="true" className="mx-auto mt-3 block h-[3px] w-12 rounded bg-mercury" />
@@ -32,15 +32,15 @@ export default function ComoFunciona() {
           {comoFunciona.steps.map((step, i) => (
             <article
               key={step.title}
-              className="relative overflow-hidden rounded-2xl bg-graphite p-7"
+              className="group relative overflow-hidden rounded-2xl border border-night/8 bg-surface p-7 shadow-[0_1px_2px_rgba(14,14,14,0.04)] transition-[transform,box-shadow] duration-300 before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-[3px] before:bg-mercury before:opacity-0 before:transition-opacity before:duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_-14px_rgba(14,14,14,0.22)] hover:before:opacity-100"
             >
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute -top-7 right-2 select-none text-[120px] font-[800] leading-none text-white/[0.05]"
+                className="pointer-events-none absolute -top-7 right-2 select-none text-[120px] font-[800] leading-none text-night/[0.04]"
               >
                 {i + 1}
               </span>
-              <span className="relative flex h-12 w-12 items-center justify-center rounded-lg bg-mercury">
+              <span className="relative flex h-12 w-12 items-center justify-center rounded-lg border border-night/12 bg-surface shadow-[0_1px_2px_rgba(14,14,14,0.04)]">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -48,16 +48,16 @@ export default function ComoFunciona() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-6 w-6 text-white"
+                  className="h-6 w-6 text-mercury"
                   aria-hidden="true"
                 >
                   {icons[i]}
                 </svg>
               </span>
-              <h3 className="relative mt-5 text-lg font-[700] text-starlight">
+              <h3 className="relative mt-5 text-lg font-[700] text-night">
                 {step.title}
               </h3>
-              <p className="relative mt-2 leading-relaxed text-silver">{step.body}</p>
+              <p className="relative mt-2 leading-relaxed text-night/65">{step.body}</p>
             </article>
           ))}
         </ScrollReveal>
