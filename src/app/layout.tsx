@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Sites com captação e agendamento automáticos pelo WhatsApp. Seu cliente te encontra no Google e a conversa começa em um toque. Diagnóstico gratuito.",
   openGraph: {
-    title: "BL Swell — Presença digital que vira conversa",
+    title: "BL Swell | Presença digital que vira conversa",
     description:
       "Sites com captação e agendamento automáticos pelo WhatsApp. Seu cliente te encontra no Google e a conversa começa em um toque.",
     locale: "pt_BR",

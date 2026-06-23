@@ -101,6 +101,16 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* Mini-solução — convite curto, centralizado */}
+        <div
+          className="hero-fade flex justify-center pb-2"
+          style={{ animationDelay: "0.8s" }}
+        >
+          <p className="font-display text-center text-xl font-[500] tracking-[-0.01em] text-night sm:text-2xl">
+            {h.ctaQuestion}
+          </p>
+        </div>
+
         {/* Moldura editorial — base + cue de scroll */}
         <div
           className="hero-fade flex items-center justify-between text-[0.7rem] font-[500] uppercase tracking-[0.28em] text-night/65 sm:text-xs"

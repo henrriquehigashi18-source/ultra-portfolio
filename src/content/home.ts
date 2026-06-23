@@ -17,7 +17,7 @@ export const home = {
     eyebrow: "Estúdio digital · do RN para todo o Brasil",
     headline: ["Presença digital", "que vira conversa."],
     lead:
-      "Seu próximo cliente está procurando no Google agora. Eu construo o site que faz ele chamar no seu WhatsApp — com captação e agendamento no automático.",
+      "Seu próximo cliente está procurando no Google agora. Eu construo o site que faz ele chamar no seu WhatsApp, com captação e agendamento no automático.",
     cta: "Falar com o Paulo",
     ctaSecondary: "Ver projetos",
     trust: "Resposta em até 24h úteis · Diagnóstico gratuito, sem compromisso",
@@ -28,18 +28,20 @@ export const home = {
     pillars: ["Design", "Confiança", "Henrique"],
     // Cada item vira uma linha; `strong: true` recebe peso bold.
     left: [
-      { text: "Se você", strong: false },
-      { text: "não confia", strong: false },
-      { text: "no ", strong: false, partial: "seu" },
-      { text: "trabalho,", strong: true },
+      { text: "Seu trabalho", strong: false },
+      { text: "é ", strong: false, partial: "excelente," },
     ],
     right: [
-      { text: "por que", strong: false },
-      { text: "o ", strong: false, partial: "cliente" },
-      { text: "confiaria?", strong: true },
+      { text: "mas quem te", strong: false },
+      { text: "procura", strong: false },
+      { text: "na internet", strong: false },
+      { text: "não vê isso.", strong: true },
     ],
     photo: "/hero-paulo.png",
     photoAlt: "Paulo Henrique, fundador da BL Swell",
+    // Mini-solução + CTA: quem clica aqui já entendeu tudo que precisa.
+    ctaQuestion: "Vamos mudar isso?",
+    ctaLabel: "Falar comigo",
     // Tagline com a última palavra animada (máquina de escrever rotativa)
     taglineRotate: {
       prefix: "Presença digital que vira",
@@ -48,13 +50,13 @@ export const home = {
     scrollCue: "Veja por que confiam em mim",
     // Heading semântica única (sr-only) — a headline visual é dividida/decorativa.
     ariaHeadline:
-      "Se você não confia no seu trabalho, por que o cliente confiaria?",
+      "Seu trabalho é excelente, mas quem te procura na internet não vê isso. Vamos mudar isso?",
   },
 
   // [PLACEHOLDER — depoimento fictício: substituir pelo depoimento real de cliente]
   provaSocial: {
     quote:
-      "Antes, o WhatsApp ficava dias no silêncio. Hoje chega mensagem de cliente novo toda semana — e a maioria já vem sabendo o que quer.",
+      "Antes, o WhatsApp ficava dias no silêncio. Hoje chega mensagem de cliente novo toda semana, e a maioria já vem sabendo o que quer.",
     author: "Mariana C.",
     role: "Doces artesanais por encomenda",
   },
@@ -63,12 +65,12 @@ export const home = {
     title: "Você se reconhece em alguma dessas situações?",
     items: [
       {
-        title: 'O cliente pesquisa "perto de mim" — e você não aparece',
+        title: 'O cliente pesquisa "perto de mim", e você não aparece',
         body: "Quem não te encontra não compara preço nem qualidade. Simplesmente nunca fica sabendo que o seu negócio existe.",
       },
       {
         title: "Ele viu seu Instagram, ficou interessado… e sumiu",
-        body: "Sem um lugar profissional para confirmar a confiança e agendar na hora, a maioria não manda mensagem. Volta para o Google — e escolhe outro.",
+        body: "Sem um lugar profissional para confirmar a confiança e agendar na hora, a maioria não manda mensagem. Volta para o Google e escolhe outro.",
       },
       {
         title: "O concorrente não é melhor que você. Ele só aparece primeiro",
@@ -78,7 +80,7 @@ export const home = {
   },
 
   solucao: {
-    title: "Não é um site bonito. É o seu melhor vendedor — de plantão 24h.",
+    title: "Não é um site bonito. É o seu melhor vendedor, de plantão 24h.",
     intro:
       "O que eu monto para o seu negócio é o circuito completo: ser encontrado, conversar e agendar.",
     items: [
@@ -95,7 +97,7 @@ export const home = {
       {
         icon: "clock",
         title: "Atendimento que não dorme",
-        body: "Automação no WhatsApp que responde na hora, tira dúvidas e encaminha o agendamento — mesmo fora do horário comercial.",
+        body: "Automação no WhatsApp que responde na hora, tira dúvidas e encaminha o agendamento, mesmo fora do horário comercial.",
       },
       {
         icon: "calendar",
@@ -123,7 +125,7 @@ export const home = {
         name: "Vitrine de Relógios",
         segment: "E-commerce · relógios premium",
         image: "/projects/site-relogios.png",
-        solucao: "Mais conversas qualificadas — cliente chega decidido",
+        solucao: "Mais conversas qualificadas: cliente chega decidido",
         resultado:
           'As conversas passaram a chegar com o cliente decidido: em vez de "quanto custa?", "quero esse".',
         metric: "3× mais conversas iniciadas pelo site",
@@ -154,7 +156,7 @@ export const home = {
         solucao: "Portfólio digital que transforma visita em contato direto",
         resultado:
           "O portfólio passou a funcionar como vitrine ativa, gerando contatos qualificados direto pelo site.",
-        metric: "[PLACEHOLDER — métrica real]",
+        metric: "[PLACEHOLDER: métrica real]",
       },
     ],
   },
@@ -172,7 +174,7 @@ export const home = {
       },
       {
         title: "Entrega com acompanhamento",
-        body: "Site no ar, automação funcionando, sua equipe treinada — e 30 dias de ajustes inclusos.",
+        body: "Site no ar, automação funcionando, sua equipe treinada, com 30 dias de ajustes inclusos.",
       },
     ],
   },
@@ -192,7 +194,7 @@ export const home = {
     ],
     outro: {
       title: "Outro segmento?",
-      body: "O método se adapta — me conta o seu caso.",
+      body: "O método se adapta. Me conta o seu caso.",
       message: "Olá Paulo, meu negócio é de outro segmento e quero saber se funciona para mim",
     },
   },
@@ -200,7 +202,7 @@ export const home = {
   sobreMim: {
     title: "Quem vai cuidar disso",
     paragraphs: [
-      "Sou Paulo Henrique, fundador da BL Swell. Minha base é sistemas e automação — e eu uso essa base para um objetivo só: fazer o WhatsApp do seu negócio tocar com gente interessada.",
+      "Sou Paulo Henrique, fundador da BL Swell. Minha base é sistemas e automação, e eu uso essa base para um objetivo só: fazer o WhatsApp do seu negócio tocar com gente interessada.",
       "Aqui você fala direto comigo, do diagnóstico à entrega. Sem agência no meio, sem jargão técnico, um projeto por vez.",
     ],
     bullets: [
@@ -213,7 +215,7 @@ export const home = {
 
   ctaFinal: {
     headline: "A busca não para enquanto você decide.",
-    body: "Neste momento, o Google está entregando o seu próximo cliente para alguém. Uma mensagem é o que separa esse alguém de você — e o diagnóstico é gratuito.",
+    body: "Neste momento, o Google está entregando o seu próximo cliente para alguém. Uma mensagem é o que separa esse alguém de você, e o diagnóstico é gratuito.",
     cta: "Iniciar conversa no WhatsApp",
     trust: "Resposta em até 24h úteis · Sem compromisso",
   },

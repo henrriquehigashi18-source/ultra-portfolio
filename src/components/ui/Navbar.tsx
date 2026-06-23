@@ -51,7 +51,7 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-5 py-4 sm:px-8 sm:py-5">
-        <a href="#hero" aria-label="BL Swell — início">
+        <a href="#hero" aria-label="BL Swell, início">
           <Logo />
         </a>
         <ul className="hidden items-center gap-8 md:flex">
