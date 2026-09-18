@@ -40,32 +40,72 @@ export default function Casos() {
     return () => ctx.revert();
   }, []);
 
+  // Setas do mobile: avançam um card por clique no scroll nativo.
+  const scrollByCard = (direction: 1 | -1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const card = track.firstElementChild as HTMLElement | null;
+    const step = card ? card.offsetWidth + 20 : track.clientWidth * 0.85;
+    track.scrollBy({ left: step * direction, behavior: "smooth" });
+  };
+
   return (
-    <section ref={sectionRef} id="projetos" className="bg-canvas overflow-hidden">
-      <div className="flex h-screen flex-col justify-center py-16">
+    <section
+      ref={sectionRef}
+      id="projetos"
+      data-frame-label={casos.frameLabel}
+      className="bg-canvas overflow-hidden"
+    >
+      <div className="flex h-screen flex-col justify-center gap-8 py-16">
         {/* Header */}
-        <div className="mb-10 flex-shrink-0 px-5 sm:px-14">
-          <h2 className="font-display text-3xl font-[600] tracking-[-0.02em] text-night sm:text-[2.75rem]">
-            {casos.title}
-          </h2>
+        <div className="flex-shrink-0 px-5 sm:px-14">
           <span
             aria-hidden="true"
-            className="mt-3 block h-[3px] w-12 rounded bg-mercury"
+            className="block h-px w-12 bg-mercury"
           />
+          <h2 className="font-display mt-5 text-3xl font-[300] leading-[1.05] tracking-[-0.02em] text-night sm:text-[2.75rem]">
+            {casos.title}{" "}
+            <span className="font-[700]">{casos.titleStrong}</span>
+          </h2>
           <p className="mt-4 max-w-xl text-night/65">{casos.subtitle}</p>
+          <p
+            aria-hidden="true"
+            className="mt-5 hidden items-center gap-2 text-xs font-[600] uppercase tracking-[0.15em] text-night/70 sm:flex"
+          >
+            {casos.dragHint}
+            <span className="text-mercury">↓</span>
+          </p>
         </div>
 
-        {/* Cards track */}
-        <div
-          ref={trackRef}
-          className="flex gap-5 px-5 sm:px-14 overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none will-change-transform"
-          style={{ scrollbarWidth: "none" }}
-        >
+        {/* Cards track — no mobile é scroll nativo com setas; no desktop o GSAP
+            arrasta a trilha conforme o scroll vertical. */}
+        <div className="relative">
+          <button
+            type="button"
+            aria-label="Ver caso anterior"
+            onClick={() => scrollByCard(-1)}
+            className="absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-night/10 bg-surface/90 text-night shadow-[0_6px_18px_-8px_rgba(14,14,14,0.4)] backdrop-blur sm:hidden"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            aria-label="Ver próximo caso"
+            onClick={() => scrollByCard(1)}
+            className="absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-night/10 bg-surface/90 text-night shadow-[0_6px_18px_-8px_rgba(14,14,14,0.4)] backdrop-blur sm:hidden"
+          >
+            ›
+          </button>
+          <div
+            ref={trackRef}
+            className="flex gap-5 px-5 sm:px-14 overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none will-change-transform"
+            style={{ scrollbarWidth: "none" }}
+          >
           {casos.items.map((caso) => (
             <article
               key={caso.name}
               className="group relative flex-shrink-0 w-[82vw] sm:w-[360px] rounded-2xl overflow-hidden snap-center"
-              style={{ height: "clamp(400px, 60vh, 560px)" }}
+              style={{ height: "clamp(360px, 48vh, 500px)" }}
             >
               {/* Full-bleed image */}
               <Image
@@ -90,18 +130,21 @@ export default function Casos() {
                 <p className="mt-2 text-[15px] leading-relaxed text-silver">
                   {caso.solucao}
                 </p>
-                <CountUp
-                  text={caso.metric}
-                  className="mt-3 block text-base font-[700] text-mercury"
-                />
+                {caso.metric && (
+                  <CountUp
+                    text={caso.metric}
+                    className="mt-3 block text-base font-[700] text-mercury"
+                  />
+                )}
               </div>
             </article>
-          ))}
-
-          {/* CTA at end of track */}
-          <div className="flex min-w-[260px] flex-shrink-0 items-center justify-center px-8">
-            <WhatsAppButton label={casos.cta} message={casos.ctaMessage} />
+            ))}
           </div>
+        </div>
+
+        {/* CTA — fechamento da seção, fora do carrossel */}
+        <div className="flex flex-shrink-0 justify-center px-5 sm:px-14">
+          <WhatsAppButton label={casos.cta} message={casos.ctaMessage} />
         </div>
       </div>
     </section>

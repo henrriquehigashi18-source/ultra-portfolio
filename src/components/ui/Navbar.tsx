@@ -9,6 +9,9 @@ export default function Navbar() {
   const { nav } = home;
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
+  // Enquanto o hero está visível, o logo animado do hero assume o topo —
+  // escondemos o logo da navbar para não duplicar (o menu fica intacto).
+  const [heroVisible, setHeroVisible] = useState(true);
   const lastY = useRef(0);
 
   useEffect(() => {
@@ -38,6 +41,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const hero = document.getElementById("hero");
+    if (!hero) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setHeroVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    io.observe(hero);
+    return () => io.disconnect();
+  }, []);
+
   // Site claro do topo ao rodapé: texto escuro sempre.
   // Ao rolar, a navbar vira vidro CLARO (não escuro) para não destoar do fundo.
   return (
@@ -51,8 +65,17 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-5 py-4 sm:px-8 sm:py-5">
-        <a href="#hero" aria-label="BL Swell, início">
+        <a href="#hero" aria-label="BL Swell, início" className="relative block">
           <Logo />
+          {/* Assinatura da marca: só no topo da página, some ao rolar.
+              Absoluta para não esticar a altura da navbar. */}
+          <span
+            className={`absolute left-0 top-full mt-1.5 hidden w-[13rem] text-[0.6rem] font-[500] uppercase leading-relaxed tracking-[0.18em] text-night/55 transition-opacity duration-500 sm:block ${
+              heroVisible ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {nav.logoTagline}
+          </span>
         </a>
         <ul className="hidden items-center gap-8 md:flex">
           {nav.links.map((link) => (

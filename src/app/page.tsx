@@ -8,6 +8,7 @@ import SobreMim from "@/components/sections/SobreMim";
 import CtaFinal from "@/components/sections/CtaFinal";
 import Footer from "@/components/sections/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import SiteFrame from "@/components/ui/SiteFrame";
 import { whatsappLink } from "@/lib/whatsapp";
 
 const jsonLd = {
@@ -16,10 +17,16 @@ const jsonLd = {
   name: "BL Swell",
   description:
     "Presença digital para negócios locais: sites com captação e agendamento automáticos pelo WhatsApp.",
-  founder: { "@type": "Person", name: "Paulo Henrique" },
-  areaServed: { "@type": "Country", name: "Brasil" },
-  email: "paulohenriquebl01@gmail.com",
-  sameAs: ["https://instagram.com/paulohenriquebl"],
+  founder: [
+    { "@type": "Person", name: "Paulo Henrique" },
+    { "@type": "Person", name: "Felipe Bernardo" },
+  ],
+  areaServed: [
+    { "@type": "State", name: "Rio Grande do Norte" },
+    { "@type": "Country", name: "Brasil" },
+  ],
+  email: "agenciablswell@gmail.com",
+  sameAs: ["https://instagram.com/b.l_Swell"],
   url: whatsappLink(),
 };
 
@@ -37,6 +44,7 @@ export default function Home() {
         <CtaFinal />
       </main>
       <Footer />
+      <SiteFrame />
       <FloatingWhatsApp />
       <script
         type="application/ld+json"

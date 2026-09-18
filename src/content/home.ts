@@ -6,26 +6,28 @@ export const home = {
     links: [
       { label: "Início", href: "#hero" },
       { label: "Serviços", href: "#servicos" },
-      { label: "Projetos", href: "#projetos" },
-      { label: "Como funciona", href: "#como-funciona" },
       { label: "Contato", href: "#contato" },
     ],
-    cta: "Falar comigo",
+    cta: "Falar com a gente",
+    logoTagline: "Soluções que impulsionam o seu negócio",
   },
 
-  hero: {
-    eyebrow: "Estúdio digital · do RN para todo o Brasil",
-    headline: ["Presença digital", "que vira conversa."],
-    lead:
-      "Seu próximo cliente está procurando no Google agora. Eu construo o site que faz ele chamar no seu WhatsApp, com captação e agendamento no automático.",
-    cta: "Falar com o Paulo",
-    ctaSecondary: "Ver projetos",
-    trust: "Resposta em até 24h úteis · Diagnóstico gratuito, sem compromisso",
+  // Moldura fixa da página: listas decorativas nos cantos. O rótulo inferior
+  // direito troca conforme a seção visível (data-frame-label em cada <section>).
+  frame: {
+    pillars: ["Estratégia", "Tecnologia", "Resultados"],
+    ticker: {
+      prefix: "Presença digital que vira",
+      words: ["conversa", "cliente", "agenda", "venda", "faturamento", "lucro"],
+    },
+    defaultLabel: "Confiança em cada etapa",
   },
 
-  // Hero editorial (claro) — estilo referência: figura central, headline nas laterais.
+  // Hero editorial (claro): manchete central sobre a onda da marca.
   heroEditorial: {
-    pillars: ["Design", "Confiança", "Henrique"],
+    frameLabel: "Veja por que confiam na gente ↓",
+    sideLeft: ["Design", "Automação", "Tráfego", "Tecnologia"],
+    sideRight: ["Resultado", "com propósito"],
     // Cada item vira uma linha; `strong: true` recebe peso bold.
     left: [
       { text: "Seu trabalho", strong: false },
@@ -33,21 +35,14 @@ export const home = {
     ],
     right: [
       { text: "mas quem te", strong: false },
-      { text: "procura", strong: false },
-      { text: "na internet", strong: false },
+      { text: "procura na internet", strong: false },
       { text: "não vê isso.", strong: true },
     ],
-    photo: "/hero-paulo.png",
-    photoAlt: "Paulo Henrique, fundador da BL Swell",
     // Mini-solução + CTA: quem clica aqui já entendeu tudo que precisa.
     ctaQuestion: "Vamos mudar isso?",
-    ctaLabel: "Falar comigo",
-    // Tagline com a última palavra animada (máquina de escrever rotativa)
-    taglineRotate: {
-      prefix: "Presença digital que vira",
-      words: ["conversa", "lead", "cliente", "venda", "faturamento", "lucro"],
-    },
-    scrollCue: "Veja por que confiam em mim",
+    ctaLabel: "Falar com a gente",
+    ctaMessage:
+      "Olá! Vi o site da BL Swell e quero saber mais sobre os serviços.",
     // Heading semântica única (sr-only) — a headline visual é dividida/decorativa.
     ariaHeadline:
       "Seu trabalho é excelente, mas quem te procura na internet não vê isso. Vamos mudar isso?",
@@ -62,27 +57,41 @@ export const home = {
   },
 
   dor: {
-    title: "Você se reconhece em alguma dessas situações?",
+    frameLabel: "Confiança em cada etapa",
+    eyebrow: "Desafios reais",
+    sideRight: ["Do problema", "à oportunidade"],
+    title: "Você se reconhece em",
+    titleStrong: "alguma dessas situações?",
+    subtitle:
+      "Antes de comprar, o seu cliente pesquisa, compara e decide. Veja onde você pode estar perdendo oportunidades.",
     items: [
       {
-        title: 'O cliente pesquisa "perto de mim", e você não aparece',
-        body: "Quem não te encontra não compara preço nem qualidade. Simplesmente nunca fica sabendo que o seu negócio existe.",
+        title: 'Ele pesquisa "perto de mim", e você não aparece.',
+        body: "Quando sua empresa não está bem posicionada, o cliente nem chega a considerar o seu negócio.",
       },
       {
-        title: "Ele viu seu Instagram, ficou interessado… e sumiu",
-        body: "Sem um lugar profissional para confirmar a confiança e agendar na hora, a maioria não manda mensagem. Volta para o Google e escolhe outro.",
+        title: "Ele vê seu conteúdo, se interessa… e some.",
+        body: "Sem uma jornada clara, um atendimento ágil e um caminho simples para contato, o interesse não vira oportunidade.",
       },
       {
-        title: "O concorrente não é melhor que você. Ele só aparece primeiro",
-        body: "Site rápido no topo da busca, botão de WhatsApp visível: quem chega antes fica com o cliente que poderia ser seu.",
+        title: "Seu concorrente chega primeiro.",
+        body: "Nem sempre vence o melhor. Às vezes, vence quem aparece antes, se comunica melhor e facilita o contato.",
       },
     ],
+    outro: {
+      lead: "É exatamente aí que a",
+      brand: "BL Swell",
+      leadEnd: "entra.",
+      body: "Estratégia, tecnologia e presença digital trabalhando juntas para transformar atenção em oportunidades.",
+    },
   },
 
   solucao: {
-    title: "Não é um site bonito. É o seu melhor vendedor, de plantão 24h.",
+    frameLabel: "Ideias em movimento",
+    eyebrow: "Serviços",
+    title: "Não é um site bonito. É o seu melhor vendedor, disponível 24h.",
     intro:
-      "O que eu monto para o seu negócio é o circuito completo: ser encontrado, conversar e agendar.",
+      "O que a BL Swell monta para o seu negócio é o circuito completo: ser encontrado, conversar e agendar.",
     items: [
       {
         icon: "search",
@@ -104,65 +113,77 @@ export const home = {
         title: "Agenda cheia sem depender da recepção",
         body: "Agendamento com lembrete automático: menos esquecimento, menos falta, mais horário preenchido.",
       },
+      {
+        icon: "target",
+        title: "Cliente chegando todo dia, não só quando dá sorte",
+        body: "Gestão de tráfego pago (Google e Meta) mirando quem já está pronto para comprar na sua região. Verba controlada, resultado medido.",
+      },
     ],
     diferencial: {
       lead: "Site bonito é o mínimo.",
-      body: "O que eu entrego é o circuito completo:",
+      body: "O que entregamos é o circuito completo:",
       steps: ["ser encontrado", "conversar", "agendar"],
     },
   },
 
   casos: {
-    title: "Casos de sucesso",
+    frameLabel: "Confiança em cada etapa",
+    title: "Casos de",
+    titleStrong: "sucesso",
     subtitle:
       "Segmentos diferentes, método igual: entender o negócio, remover o atrito e transformar interesse em conversa.",
+    dragHint: "Role para ver mais casos",
     cta: "Quero um resultado assim",
     ctaMessage:
-      "Olá, Paulo! Vi os casos de sucesso no seu site e quero um resultado assim para o meu negócio.",
+      "Olá! Vi os casos de sucesso da BL Swell e quero um resultado assim para o meu negócio.",
     // [PLACEHOLDER — métricas abaixo são fictícias: substituir pelos números reais de cada cliente]
     items: [
       {
         name: "Vitrine de Relógios",
         segment: "E-commerce · relógios premium",
         image: "/projects/site-relogios.png",
-        solucao: "Mais conversas qualificadas: cliente chega decidido",
+        solucao: "Mais conversas qualificadas e aumento nas vendas.",
         resultado:
           'As conversas passaram a chegar com o cliente decidido: em vez de "quanto custa?", "quero esse".',
-        metric: "3× mais conversas iniciadas pelo site",
+        metric: "3× mais conversas",
       },
       {
         name: "Zaya Cacau",
         segment: "Doces artesanais",
         image: "/projects/zaya-cacau.png",
-        solucao: "Encomendas chegando com o pedido já montado na mensagem",
+        solucao: "Mais visibilidade, pedidos e fortalecimento da marca.",
         resultado:
           "As encomendas de datas passaram a chegar pelo site, com o pedido já montado na mensagem.",
-        metric: "2× mais encomendas na primeira data comemorativa",
+        metric: "2× mais encomendas",
       },
       {
         name: "Pro Telecom",
         segment: "Portal técnico · telecom",
         image: "/projects/pro-telecom.png",
-        solucao: "Horas de planilha que viraram minutos de sistema",
+        solucao: "Mais leads e agendamentos sem esforço manual.",
         resultado:
           "O retrabalho de planilha virou minutos, e a equipe voltou a focar no atendimento.",
-        metric: "≈10 horas por semana liberadas",
+        metric: "+10 horas por semana",
       },
       {
-        // [PLACEHOLDER — substituir pelos dados reais do projeto VS Design]
         name: "VS Design",
         segment: "Design · identidade visual",
         image: "/projects/vsdesign.png",
-        solucao: "Portfólio digital que transforma visita em contato direto",
+        solucao: "Posicionamento digital que gera oportunidades.",
         resultado:
           "O portfólio passou a funcionar como vitrine ativa, gerando contatos qualificados direto pelo site.",
-        metric: "[PLACEHOLDER: métrica real]",
+        metric: "Aumento de clientes",
       },
     ],
   },
 
   comoFunciona: {
-    title: "Como funciona",
+    frameLabel: "Confiança em cada etapa",
+    eyebrow: "Processo",
+    title: "Como",
+    titleStrong: "funciona",
+    subtitle:
+      "Do primeiro contato à entrega, você sabe exatamente o que esperar.",
     steps: [
       {
         title: "Diagnóstico gratuito",
@@ -180,42 +201,72 @@ export const home = {
   },
 
   paraQuem: {
-    title: "Feito para quem vive de agenda e de cliente local",
+    frameLabel: "Soluções para o seu negócio",
+    eyebrow: "Para quem é",
+    title: "Feito para quem vive de agenda e de",
+    titleStrong: "cliente local",
     items: [
       {
         name: "Clínicas e consultórios",
-        note: "agenda cheia e menos faltas",
+        note: "Agenda cheia e menos faltas",
+        icon: "calendar",
         featured: true,
       },
-      { name: "Advogados", note: "captação com autoridade" },
-      { name: "Restaurantes", note: "reserva e pedido sem atrito" },
-      { name: "Comércio local", note: "quem procura perto, te acha" },
-      { name: "Serviços", note: "orçamento direto no WhatsApp" },
+      { name: "Advogados", note: "Captação com autoridade", icon: "scale" },
+      { name: "Restaurantes", note: "Reserva e pedido sem atrito", icon: "cutlery" },
+      { name: "Comércio local", note: "Quem procura perto, te acha", icon: "store" },
+      { name: "Serviços", note: "Orçamento direto no WhatsApp", icon: "gear" },
     ],
     outro: {
       title: "Outro segmento?",
       body: "O método se adapta. Me conta o seu caso.",
-      message: "Olá Paulo, meu negócio é de outro segmento e quero saber se funciona para mim",
+      message: "Olá! Meu negócio é de outro segmento, quero saber se funciona para mim",
     },
   },
 
   sobreMim: {
-    title: "Quem vai cuidar disso",
-    paragraphs: [
-      "Sou Paulo Henrique, fundador da BL Swell. Minha base é sistemas e automação, e eu uso essa base para um objetivo só: fazer o WhatsApp do seu negócio tocar com gente interessada.",
-      "Aqui você fala direto comigo, do diagnóstico à entrega. Sem agência no meio, sem jargão técnico, um projeto por vez.",
-    ],
+    frameLabel: "Gente por trás do resultado",
+    eyebrow: "Quem está por trás",
+    title: "Os",
+    titleStrong: "sócios",
+    lead: "Ser bom não é suficiente",
+    leadStrong: "se ninguém te vê.",
+    intro:
+      "Seu trabalho pode ser excelente. Mas é a sua presença digital que faz o cliente te encontrar, confiar e dar o próximo passo.",
+    closing: "Você fala direto com os dois.",
+    closingStrong: "Sem intermediários.",
+    // Usados pelo bloco final de CTA (CtaFinal.tsx) — não mexer no conteúdo, só reaproveitado ali.
     bullets: [
-      "Atendimento direto com quem faz",
+      "Atendimento direto com quem executa",
       "Explicação em português claro, sem tecniquês",
       "Do Rio Grande do Norte para todo o Brasil",
     ],
-    photoAlt: "Paulo Henrique, fundador da BL Swell",
+    people: [
+      {
+        name: "Felipe",
+        role: "Estratégia e relacionamento",
+        body: "Entende o negócio e qualifica cada projeto.",
+        photo: "/felipe-bernardo.jpg",
+        photoAlt: "Felipe Bernardo, sócio da BL Swell",
+      },
+      {
+        name: "Paulo",
+        role: "Tecnologia e operação",
+        body: "Sites, automações e tráfego pago.",
+        photo: "/paulo-henrique.jpeg",
+        photoAlt: "Paulo Henrique, sócio da BL Swell",
+      },
+    ],
   },
 
   ctaFinal: {
-    headline: "A busca não para enquanto você decide.",
-    body: "Neste momento, o Google está entregando o seu próximo cliente para alguém. Uma mensagem é o que separa esse alguém de você, e o diagnóstico é gratuito.",
+    frameLabel: "Seu próximo passo começa aqui",
+    eyebrow: "Vamos conversar",
+    headline: "A busca não para",
+    headlineRest: "enquanto",
+    headlineStrong: "você decide.",
+    body: "Neste momento, o Google está entregando o seu próximo cliente para alguém. Uma mensagem é o que separa esse alguém de você,",
+    bodyStrong: "e o diagnóstico é gratuito.",
     cta: "Iniciar conversa no WhatsApp",
     trust: "Resposta em até 24h úteis · Sem compromisso",
   },
@@ -223,8 +274,8 @@ export const home = {
   footer: {
     tagline: "Presença digital que vira conversa.",
     whatsappLabel: "WhatsApp",
-    instagramHandle: "@paulohenriquebl",
-    instagramUrl: "https://instagram.com/paulohenriquebl",
-    email: "paulohenriquebl01@gmail.com",
+    instagramHandle: "@b.l_Swell",
+    instagramUrl: "https://instagram.com/b.l_Swell",
+    email: "agenciablswell@gmail.com",
   },
 } as const;

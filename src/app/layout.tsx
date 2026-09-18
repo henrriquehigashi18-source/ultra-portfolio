@@ -26,14 +26,20 @@ const clashDisplay = localFont({
 export const metadata: Metadata = {
   title: "BL Swell | Seu cliente te acha no Google e chama no WhatsApp",
   description:
-    "Sites com captação e agendamento automáticos pelo WhatsApp. Seu cliente te encontra no Google e a conversa começa em um toque. Diagnóstico gratuito.",
+    "BL Swell: Agência de Presença Digital. Paulo Henrique (operação) + Felipe Bernardo (comercial). Sites com captação e agendamento automáticos pelo WhatsApp.",
   openGraph: {
     title: "BL Swell | Presença digital que vira conversa",
     description:
-      "Sites com captação e agendamento automáticos pelo WhatsApp. Seu cliente te encontra no Google e a conversa começa em um toque.",
+      "Agência de Presença Digital com dois responsáveis: Paulo Henrique (operação) e Felipe Bernardo (comercial). Sites com captação e agendamento automáticos pelo WhatsApp.",
     locale: "pt_BR",
     type: "website",
     siteName: "BL Swell",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BL Swell | Presença digital que vira conversa",
+    description:
+      "Agência de Presença Digital com dois responsáveis: Paulo Henrique (operação) e Felipe Bernardo (comercial).",
   },
 };
 

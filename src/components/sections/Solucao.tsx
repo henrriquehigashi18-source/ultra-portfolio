@@ -1,5 +1,6 @@
 import { home } from "@/content/home";
 import ScrollReveal from "@/components/animations/ScrollReveal";
+import WaveBackdrop from "@/components/ui/WaveBackdrop";
 
 const icons: Record<string, React.ReactNode> = {
   search: (
@@ -23,17 +24,29 @@ const icons: Record<string, React.ReactNode> = {
       <path d="M16 3v4M8 3v4M3 11h18" />
     </>
   ),
+  target: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="12" cy="12" r="1" fill="currentColor" />
+    </>
+  ),
 };
 
 export default function Solucao() {
   const { solucao } = home;
   return (
-    <section id="servicos" className="bg-canvas">
-      <div className="mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
+    <section
+      id="servicos"
+      data-frame-label={solucao.frameLabel}
+      className="relative overflow-hidden bg-canvas"
+    >
+      <WaveBackdrop heightClass="h-[30%]" opacityClass="opacity-40" />
+      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
         <ScrollReveal className="text-center">
-          <h2 className="font-display text-3xl font-[600] tracking-[-0.02em] text-night sm:text-4xl">
-            Serviços
-          </h2>
+          <p className="text-[0.65rem] font-[500] uppercase tracking-[0.22em] text-night/55">
+            {solucao.eyebrow}
+          </p>
           <span aria-hidden="true" className="mx-auto mt-3 block h-[3px] w-12 rounded bg-mercury" />
         </ScrollReveal>
 

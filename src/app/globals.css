@@ -130,21 +130,6 @@ header[id] {
   animation: lineRise 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* Moldura editorial — desenha de cima para baixo */
-@keyframes bracketDraw {
-  from {
-    clip-path: inset(0 0 100% 0);
-    opacity: 0;
-  }
-  to {
-    clip-path: inset(0 0 0 0);
-    opacity: 1;
-  }
-}
-.bracket-draw {
-  animation: bracketDraw 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
-}
-
 /* Fade-up no load (hero) — elementos de apoio entram após a headline */
 @keyframes heroFadeUp {
   from {
@@ -191,11 +176,6 @@ header[id] {
   }
   .line-rise {
     transform: none;
-    animation: none;
-  }
-  .bracket-draw {
-    clip-path: none;
-    opacity: 1;
     animation: none;
   }
 }

@@ -1,7 +1,8 @@
-import Image from "next/image";
 import { home } from "@/content/home";
+import { whatsappLink } from "@/lib/whatsapp";
 import Navbar from "@/components/ui/Navbar";
-import RotatingWord from "@/components/animations/RotatingWord";
+import WaveBackdrop from "@/components/ui/WaveBackdrop";
+import { LogoMark } from "@/components/ui/Logo";
 
 type Seg = { text: string; strong: boolean; partial?: string };
 
@@ -38,101 +39,79 @@ function HeadlineLines({
   );
 }
 
+// Coluna de apoio nas laterais do hero (só desktop).
+function SideNote({
+  lines,
+  align,
+}: {
+  lines: readonly string[];
+  align: "left" | "right";
+}) {
+  return (
+    <div
+      aria-hidden="true"
+      className={`hero-fade hidden lg:block ${align === "right" ? "text-right" : ""}`}
+      style={{ animationDelay: "1.1s" }}
+    >
+      <ul className="space-y-1 text-[0.65rem] font-[500] uppercase tracking-[0.22em] text-night/55">
+        {lines.map((l) => (
+          <li key={l}>{l}</li>
+        ))}
+      </ul>
+      <span
+        className={`mt-3 block h-px w-8 bg-mercury/60 ${align === "right" ? "ml-auto" : ""}`}
+      />
+    </div>
+  );
+}
+
 export default function Hero() {
   const { heroEditorial: h } = home;
+
   return (
     <header
       id="hero"
+      data-frame-label={h.frameLabel}
       className="relative overflow-hidden bg-[#edeced] text-night"
     >
       <Navbar />
-      <div className="mx-auto flex min-h-svh w-full max-w-[1200px] flex-col justify-between px-5 pb-8 pt-28 sm:px-8 sm:pb-10 sm:pt-32">
-        {/* Heading semântica única para SEO/leitor de tela (headline visual é decorativa) */}
+      <WaveBackdrop heightClass="h-[62%]" opacityClass="opacity-90" priority />
+
+      <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-[1320px] items-center gap-6 px-5 pb-16 pt-32 sm:px-8 lg:gap-10">
+        {/* Heading semântica única para SEO/leitor de tela */}
         <h1 className="sr-only">{h.ariaHeadline}</h1>
-        {/* Moldura editorial — topo */}
-        <div
-          className="hero-fade flex items-center justify-between text-[0.7rem] font-[500] uppercase tracking-[0.32em] text-night/70 sm:text-xs"
-          style={{ animationDelay: "0.1s" }}
-        >
-          {h.pillars.map((p) => (
-            <span key={p}>{p}</span>
-          ))}
-        </div>
+
+        <SideNote lines={h.sideLeft} align="left" />
 
         {/* Composição central */}
-        <div className="grid flex-1 items-center gap-y-8 py-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-x-2 lg:py-0">
-          {/* Headline esquerda */}
+        <div className="relative flex flex-1 flex-col items-center justify-center gap-9 text-center">
+          {/* Onda da marca — marca d'água atrás da manchete */}
+          <LogoMark
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[34vh] w-auto -translate-x-1/2 -translate-y-1/2 opacity-[0.06] sm:h-[42vh]"
+            color="#0e0e0e"
+          />
+
           <div
             aria-hidden="true"
-            className="order-1 text-center text-[2rem] leading-[1.04] tracking-[-0.01em] text-night sm:text-4xl lg:self-end lg:pb-16 lg:pr-4 lg:text-right lg:text-[2.7rem] xl:text-5xl"
+            className="max-w-3xl text-[2.15rem] leading-[1.08] tracking-[-0.01em] text-night sm:text-5xl lg:text-[3.4rem]"
           >
             <HeadlineLines segments={h.left} baseDelay={0.3} />
+            <HeadlineLines segments={h.right} baseDelay={0.46} />
           </div>
 
-          {/* Figura + moldura */}
-          <div className="relative order-2 mx-auto aspect-[4/5] w-[min(78vw,360px)]">
-            <Image
-              src={h.photo}
-              alt={h.photoAlt}
-              fill
-              priority
-              sizes="(min-width: 1024px) 360px, 78vw"
-              className="object-cover object-bottom"
-            />
-            {/* Gradientes de fusão — fundem a foto com o fundo #edeced */}
-            <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#edeced] to-transparent" />
-            {/* Lado direito (rumo à 2ª headline): fade menor, menos esfumaçado */}
-            <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-[#edeced] to-transparent" />
-            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-10 h-12 bg-gradient-to-b from-[#edeced] to-transparent" />
-            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-[#edeced] to-transparent" />
-            {/* Moldura editorial na frente — linha de topo no espaço claro acima da cabeça */}
-            <div
-              aria-hidden="true"
-              className="bracket-draw absolute left-1/2 top-[9%] z-20 h-[48%] w-[78%] -translate-x-1/2 rounded-t-[44px] border border-b-0 border-night/25"
-            />
-          </div>
-
-          {/* Headline direita */}
-          <div
-            aria-hidden="true"
-            className="order-3 text-center text-[2rem] leading-[1.04] tracking-[-0.01em] text-night sm:text-4xl lg:self-start lg:mt-[14%] lg:pl-4 lg:text-left lg:text-[2.7rem] xl:text-5xl"
-          >
-            <HeadlineLines segments={h.right} baseDelay={0.5} />
-          </div>
-        </div>
-
-        {/* Mini-solução — convite curto, centralizado */}
-        <div
-          className="hero-fade flex justify-center pb-2"
-          style={{ animationDelay: "0.8s" }}
-        >
-          <p className="font-display text-center text-xl font-[500] tracking-[-0.01em] text-night sm:text-2xl">
-            {h.ctaQuestion}
-          </p>
-        </div>
-
-        {/* Moldura editorial — base + cue de scroll */}
-        <div
-          className="hero-fade flex items-center justify-between text-[0.7rem] font-[500] uppercase tracking-[0.28em] text-night/65 sm:text-xs"
-          style={{ animationDelay: "0.9s" }}
-        >
-          <span>
-            {h.taglineRotate.prefix}{" "}
-            <RotatingWord
-              words={h.taglineRotate.words}
-              className="text-night"
-            />
-          </span>
           <a
-            href="#projetos"
-            className="link-underline hidden items-center gap-2 text-night/70 transition-colors hover:text-night sm:inline-flex"
+            href={whatsappLink(h.ctaMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-fade inline-flex min-h-12 items-center gap-3 rounded-full bg-mercury px-7 py-3 text-xl font-[700] text-white shadow-[0_12px_30px_-10px_rgba(255,79,23,0.6)] active:scale-[0.98]"
+            style={{ animationDelay: "0.85s" }}
           >
-            {h.scrollCue}
-            <span aria-hidden="true" className="text-sm">
-              ↓
-            </span>
+            <LogoMark className="h-6 w-auto" color="#ffffff" />
+            {h.ctaQuestion}
           </a>
         </div>
+
+        <SideNote lines={h.sideRight} align="right" />
       </div>
     </header>
   );
