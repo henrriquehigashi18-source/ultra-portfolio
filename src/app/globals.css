@@ -2,32 +2,37 @@
 
 @theme {
   /* Dark + laranja — referência Sadik Hossain (referencia/) */
-  --color-mercury: #ff4f17;
-  --color-ghost: #ff6a3d;
-  --color-ember: #ff8a5c;
-  --color-deep: #0a0a0a;
-  --color-night: #0e0e0e;
-  --color-graphite: #161616;
-  --color-iron: #1f1f1f;
-  --color-lead: #4d4d4d;
-  --color-starlight: #f5f5f5;
-  --color-silver: #a6a6a6;
+  --color-mercury: #ff5a00;
+  --color-ghost: #ff7433;
+  --color-ember: #ff9a66;
+  --color-deep: #080808;
+  --color-night: #0b0b0b;
+  --color-graphite: #111111;
+  --color-iron: #1b1b1b;
+  --color-lead: #747474;
+  --color-starlight: #f7f5f2;
+  --color-silver: #b8b5b1;
 
   /* Superfícies claras — paleta editorial do hero, aplicada a todo o site */
-  --color-canvas: #edeced;
-  --color-surface: #ffffff;
+  --color-canvas: #080808;
+  --color-surface: #f7f5f2;
 
   /* Tipografia */
   --font-sans: var(--font-satoshi);
   --font-display: var(--font-clash);
 }
 
+html {
+  background: var(--color-deep);
+}
+
 body {
-  background: var(--color-canvas);
-  color: var(--color-night);
+  background: var(--color-deep);
+  color: var(--color-starlight);
   font-family: var(--font-satoshi), system-ui, sans-serif;
   /* Grão sutil global — textura premium, remove o "plano" */
   position: relative;
+  overflow-x: clip;
 }
 
 /* Camada de grão (noise) por cima do fundo, atrás do conteúdo */
@@ -37,9 +42,42 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.018;
-  mix-blend-mode: multiply;
+  opacity: 0.035;
+  mix-blend-mode: soft-light;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.section-dark {
+  background: var(--color-deep);
+  color: var(--color-starlight);
+}
+
+.section-light {
+  background: var(--color-starlight);
+  color: var(--color-night);
+}
+
+.surface-dark {
+  border: 1px solid rgb(255 255 255 / 0.08);
+  background: rgb(17 17 17 / 0.88);
+}
+
+.eyebrow {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.orange-glow {
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgb(255 90 0 / 0.28) 0%,
+    rgb(255 90 0 / 0.08) 38%,
+    transparent 68%
+  );
+  filter: blur(44px);
 }
 
 /* Utilitário de fonte display */
@@ -78,8 +116,8 @@ header[id] {
   border-radius: 9999px;
   background: radial-gradient(
     circle,
-    rgba(255, 79, 23, 0.22) 0%,
-    rgba(255, 79, 23, 0.06) 38%,
+    rgba(255, 90, 0, 0.22) 0%,
+    rgba(255, 90, 0, 0.06) 38%,
     transparent 70%
   );
   filter: blur(40px);
@@ -164,8 +202,20 @@ header[id] {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
   .rotating-caret {
     animation: none;
+    display: none;
   }
   .link-underline::after {
     transition: none;

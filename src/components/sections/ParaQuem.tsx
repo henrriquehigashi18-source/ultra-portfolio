@@ -66,16 +66,16 @@ export default function ParaQuem() {
   return (
     <section
       data-frame-label={paraQuem.frameLabel}
-      className="relative overflow-hidden bg-canvas"
+      className="relative overflow-hidden bg-graphite text-starlight"
     >
       <WaveBackdrop heightClass="h-[32%]" opacityClass="opacity-35" />
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
         <ScrollReveal>
-          <p className="flex items-center gap-3 text-[0.65rem] font-[500] uppercase tracking-[0.22em] text-night/55">
+          <p className="flex items-center gap-3 text-[0.65rem] font-[600] uppercase tracking-[0.22em] text-white/50">
             <span aria-hidden="true" className="block h-px w-8 bg-mercury" />
             {paraQuem.eyebrow}
           </p>
-          <h2 className="font-display mt-5 max-w-2xl text-3xl font-[300] leading-tight tracking-[-0.02em] text-night sm:text-[2.6rem]">
+          <h2 className="font-display mt-5 max-w-2xl text-3xl font-[300] leading-tight tracking-[-0.02em] text-starlight sm:text-[2.6rem]">
             {paraQuem.title}{" "}
             <span className="font-[700] text-mercury">{paraQuem.titleStrong}</span>
           </h2>
@@ -83,7 +83,8 @@ export default function ParaQuem() {
 
         <ScrollReveal className="mt-12 grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
           {/* Card destaque */}
-          <article className="relative flex flex-col justify-between rounded-[28px] border border-mercury/35 bg-surface/90 p-8 ring-1 ring-mercury/15">
+          <article className="relative flex flex-col justify-between overflow-hidden rounded-2xl border border-mercury/45 bg-deep/90 p-8 shadow-[0_24px_60px_-38px_rgba(255,90,0,0.75)] ring-1 ring-mercury/10">
+            <span aria-hidden="true" className="orange-glow absolute -right-24 -top-24 h-64 w-64 opacity-55" />
             <span className="inline-flex w-fit rounded-full border border-mercury/50 px-4 py-1 text-xs font-[600] text-mercury">
               Mais atendido
             </span>
@@ -92,10 +93,10 @@ export default function ParaQuem() {
             </span>
             <div>
               <span aria-hidden="true" className="block h-px w-8 bg-mercury" />
-              <h3 className="mt-4 text-xl font-[700] text-night">
+              <h3 className="mt-4 text-xl font-[700] text-starlight">
                 {featured.name}
               </h3>
-              <p className="mt-1 text-night/65">{featured.note}</p>
+              <p className="mt-1 text-silver">{featured.note}</p>
             </div>
           </article>
 
@@ -104,13 +105,13 @@ export default function ParaQuem() {
             {rest.map((item) => (
               <article
                 key={item.name}
-                className="rounded-[24px] border border-night/8 bg-surface/90 p-7 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_-20px_rgba(14,14,14,0.25)]"
+                className="rounded-2xl border border-white/10 bg-deep/80 p-7 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-mercury/30 hover:shadow-[0_18px_42px_-28px_rgba(255,90,0,0.5)]"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-night/10 bg-surface">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-iron">
                   <Icon name={item.icon} className="h-6 w-6 text-mercury" />
                 </span>
-                <h3 className="mt-5 text-lg font-[700] text-night">{item.name}</h3>
-                <p className="mt-1 text-night/65">{item.note}</p>
+                <h3 className="mt-5 text-lg font-[700] text-starlight">{item.name}</h3>
+                <p className="mt-1 text-silver">{item.note}</p>
               </article>
             ))}
 
@@ -118,16 +119,16 @@ export default function ParaQuem() {
               href={whatsappLink(paraQuem.outro.message)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-5 rounded-[24px] border border-night/12 bg-surface/85 p-7 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-mercury/50 hover:shadow-[0_16px_36px_-20px_rgba(14,14,14,0.25)] sm:col-span-2"
+              className="group flex items-center gap-5 rounded-2xl border border-white/12 bg-deep/75 p-7 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-mercury/50 hover:shadow-[0_18px_42px_-28px_rgba(255,90,0,0.55)] sm:col-span-2"
             >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-night/10 bg-surface">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-iron">
                 <Icon name="chat" className="h-6 w-6 text-mercury" />
               </span>
               <span className="flex-1">
-                <span className="block text-lg font-[700] text-night">
+                <span className="block text-lg font-[700] text-starlight">
                   {paraQuem.outro.title}
                 </span>
-                <span className="block text-night/65">{paraQuem.outro.body}</span>
+                <span className="block text-silver">{paraQuem.outro.body}</span>
               </span>
               <span
                 aria-hidden="true"

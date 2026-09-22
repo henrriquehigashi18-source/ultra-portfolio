@@ -1,12 +1,11 @@
+import Image from "next/image";
 import { home } from "@/content/home";
 import { whatsappLink } from "@/lib/whatsapp";
 import Navbar from "@/components/ui/Navbar";
-import WaveBackdrop from "@/components/ui/WaveBackdrop";
-import { LogoMark } from "@/components/ui/Logo";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 type Seg = { text: string; strong: boolean; partial?: string };
 
-// Renderiza uma linha da headline com reveal por máscara e peso misto.
 function HeadlineLines({
   segments,
   baseDelay,
@@ -25,10 +24,12 @@ function HeadlineLines({
             {seg.partial ? (
               <>
                 {seg.text}
-                <strong className="font-[700]">{seg.partial}</strong>
+                <strong className="font-[700] text-mercury">{seg.partial}</strong>
               </>
             ) : (
-              <span className={seg.strong ? "font-[700]" : "font-[300]"}>
+              <span
+                className={seg.strong ? "font-[700] text-mercury" : "font-[300]"}
+              >
                 {seg.text}
               </span>
             )}
@@ -39,79 +40,64 @@ function HeadlineLines({
   );
 }
 
-// Coluna de apoio nas laterais do hero (só desktop).
-function SideNote({
-  lines,
-  align,
-}: {
-  lines: readonly string[];
-  align: "left" | "right";
-}) {
-  return (
-    <div
-      aria-hidden="true"
-      className={`hero-fade hidden lg:block ${align === "right" ? "text-right" : ""}`}
-      style={{ animationDelay: "1.1s" }}
-    >
-      <ul className="space-y-1 text-[0.65rem] font-[500] uppercase tracking-[0.22em] text-night/55">
-        {lines.map((l) => (
-          <li key={l}>{l}</li>
-        ))}
-      </ul>
-      <span
-        className={`mt-3 block h-px w-8 bg-mercury/60 ${align === "right" ? "ml-auto" : ""}`}
-      />
-    </div>
-  );
-}
-
 export default function Hero() {
-  const { heroEditorial: h } = home;
+  const { heroEditorial: hero } = home;
 
   return (
     <header
       id="hero"
-      data-frame-label={h.frameLabel}
-      className="relative overflow-hidden bg-[#edeced] text-night"
+      data-frame-label={hero.frameLabel}
+      className="relative min-h-svh overflow-hidden bg-deep text-starlight"
     >
       <Navbar />
-      <WaveBackdrop heightClass="h-[62%]" opacityClass="opacity-90" priority />
 
-      <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-[1320px] items-center gap-6 px-5 pb-16 pt-32 sm:px-8 lg:gap-10">
-        {/* Heading semântica única para SEO/leitor de tela */}
-        <h1 className="sr-only">{h.ariaHeadline}</h1>
+      <div className="absolute inset-0">
+        <Image
+          src="/hero-ocean.png"
+          alt="Onda escura iluminada por linhas laranja, símbolo de movimento e crescimento"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[62%_center] sm:object-center"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0.66)_35%,rgba(0,0,0,0.18)_72%,rgba(0,0,0,0.52)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.48)_0%,transparent_25%,rgba(8,8,8,0.12)_62%,#080808_100%)]" />
+      </div>
 
-        <SideNote lines={h.sideLeft} align="left" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-px bg-gradient-to-r from-transparent via-mercury/70 to-transparent" />
 
-        {/* Composição central */}
-        <div className="relative flex flex-1 flex-col items-center justify-center gap-9 text-center">
-          {/* Onda da marca — marca d'água atrás da manchete */}
-          <LogoMark
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[34vh] w-auto -translate-x-1/2 -translate-y-1/2 opacity-[0.06] sm:h-[42vh]"
-            color="#0e0e0e"
-          />
+      <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-[1320px] items-center px-5 pb-28 pt-32 sm:px-8 sm:pb-32 lg:px-12">
+        <h1 className="sr-only">{hero.ariaHeadline}</h1>
+
+        <div className="relative flex w-full max-w-[52rem] min-w-0 flex-col items-start">
+          <div
+            className="hero-fade mb-7 flex max-w-[18rem] items-center gap-3 text-[0.65rem] font-[650] uppercase leading-relaxed tracking-[0.22em] text-white/65 sm:max-w-none sm:tracking-[0.24em]"
+            style={{ animationDelay: "0.18s" }}
+          >
+            <span aria-hidden="true" className="h-px w-10 bg-mercury" />
+            {home.nav.logoTagline}
+          </div>
 
           <div
             aria-hidden="true"
-            className="max-w-3xl text-[2.15rem] leading-[1.08] tracking-[-0.01em] text-night sm:text-5xl lg:text-[3.4rem]"
+            className="font-display w-full text-[2.45rem] leading-[0.98] tracking-[-0.035em] text-white sm:text-[4.1rem] lg:text-[5rem]"
           >
-            <HeadlineLines segments={h.left} baseDelay={0.3} />
-            <HeadlineLines segments={h.right} baseDelay={0.46} />
+            <HeadlineLines segments={hero.left} baseDelay={0.3} />
+            <HeadlineLines segments={hero.right} baseDelay={0.46} />
           </div>
 
           <a
-            href={whatsappLink(h.ctaMessage)}
+            href={whatsappLink(hero.ctaMessage)}
             target="_blank"
             rel="noopener noreferrer"
-            className="hero-fade inline-flex min-h-12 items-center gap-3 rounded-full bg-mercury px-7 py-3 text-xl font-[700] text-white shadow-[0_12px_30px_-10px_rgba(255,79,23,0.6)] active:scale-[0.98]"
+            className="hero-fade mt-9 inline-flex min-h-12 items-center gap-3 rounded-lg border border-mercury bg-mercury px-7 py-3 text-lg font-[700] text-white shadow-[0_16px_42px_-14px_rgba(255,90,0,0.9)] transition-[background-color,box-shadow,transform] duration-200 hover:bg-ghost hover:shadow-[0_18px_48px_-12px_rgba(255,90,0,0.95)] active:scale-[0.98]"
             style={{ animationDelay: "0.85s" }}
           >
-            <LogoMark className="h-6 w-auto" color="#ffffff" />
-            {h.ctaQuestion}
+            <WhatsAppIcon className="h-6 w-6 shrink-0" />
+            {hero.ctaQuestion}
           </a>
         </div>
 
-        <SideNote lines={h.sideRight} align="right" />
       </div>
     </header>
   );

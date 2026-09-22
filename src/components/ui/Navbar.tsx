@@ -56,12 +56,12 @@ export default function Navbar() {
   // Ao rolar, a navbar vira vidro CLARO (não escuro) para não destoar do fundo.
   return (
     <nav
-      className={`fixed inset-x-0 top-0 z-50 text-night transition-[transform,background-color,backdrop-filter,border-color] duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 text-starlight transition-[transform,background-color,backdrop-filter,border-color] duration-300 ${
         hidden ? "-translate-y-full" : "translate-y-0"
       } ${
         scrolled
-          ? "border-b border-night/8 bg-canvas/80 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent"
+          ? "border-b border-white/10 bg-deep/85 backdrop-blur-xl"
+          : "border-b border-transparent bg-gradient-to-b from-black/65 to-transparent"
       }`}
     >
       <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-5 py-4 sm:px-8 sm:py-5">
@@ -70,7 +70,7 @@ export default function Navbar() {
           {/* Assinatura da marca: só no topo da página, some ao rolar.
               Absoluta para não esticar a altura da navbar. */}
           <span
-            className={`absolute left-0 top-full mt-1.5 hidden w-[13rem] text-[0.6rem] font-[500] uppercase leading-relaxed tracking-[0.18em] text-night/55 transition-opacity duration-500 sm:block ${
+            className={`absolute left-0 top-full mt-1.5 hidden w-[13rem] text-[0.6rem] font-[500] uppercase leading-relaxed tracking-[0.18em] text-white/55 transition-opacity duration-500 sm:block ${
               heroVisible ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -82,7 +82,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="link-underline inline-block py-2 text-sm font-[500] tracking-[0.04em] uppercase text-night/60 transition-colors duration-300 hover:text-night"
+                className="link-underline inline-block py-2 text-sm font-[500] tracking-[0.04em] uppercase text-white/65 transition-colors duration-300 hover:text-white"
               >
                 {link.label}
               </a>
@@ -93,7 +93,7 @@ export default function Navbar() {
           href={whatsappLink()}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-11 items-center rounded-lg border border-night/30 px-4 text-sm font-[600] text-night transition-colors duration-300 hover:bg-mercury hover:text-white hover:border-mercury active:scale-[0.98]"
+          className="hidden min-h-11 items-center rounded-lg border border-white/25 px-4 text-sm font-[650] text-white transition-[background-color,border-color,transform] duration-200 hover:border-mercury hover:bg-mercury active:scale-[0.98] sm:inline-flex"
         >
           {nav.cta}
         </a>

@@ -54,7 +54,7 @@ export default function Casos() {
       ref={sectionRef}
       id="projetos"
       data-frame-label={casos.frameLabel}
-      className="bg-canvas overflow-hidden"
+      className="overflow-hidden bg-deep"
     >
       <div className="flex h-screen flex-col justify-center gap-8 py-16">
         {/* Header */}
@@ -63,14 +63,14 @@ export default function Casos() {
             aria-hidden="true"
             className="block h-px w-12 bg-mercury"
           />
-          <h2 className="font-display mt-5 text-3xl font-[300] leading-[1.05] tracking-[-0.02em] text-night sm:text-[2.75rem]">
+          <h2 className="font-display mt-5 text-3xl font-[300] leading-[1.05] tracking-[-0.02em] text-starlight sm:text-[2.75rem]">
             {casos.title}{" "}
             <span className="font-[700]">{casos.titleStrong}</span>
           </h2>
-          <p className="mt-4 max-w-xl text-night/65">{casos.subtitle}</p>
+          <p className="mt-4 max-w-xl text-silver">{casos.subtitle}</p>
           <p
             aria-hidden="true"
-            className="mt-5 hidden items-center gap-2 text-xs font-[600] uppercase tracking-[0.15em] text-night/70 sm:flex"
+            className="mt-5 hidden items-center gap-2 text-xs font-[600] uppercase tracking-[0.15em] text-white/55 sm:flex"
           >
             {casos.dragHint}
             <span className="text-mercury">↓</span>
@@ -84,17 +84,21 @@ export default function Casos() {
             type="button"
             aria-label="Ver caso anterior"
             onClick={() => scrollByCard(-1)}
-            className="absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-night/10 bg-surface/90 text-night shadow-[0_6px_18px_-8px_rgba(14,14,14,0.4)] backdrop-blur sm:hidden"
+            className="absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-deep/85 text-white shadow-[0_10px_26px_-12px_rgba(0,0,0,0.9)] backdrop-blur sm:hidden"
           >
-            ‹
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden="true">
+              <path d="m15 18-6-6 6-6" />
+            </svg>
           </button>
           <button
             type="button"
             aria-label="Ver próximo caso"
             onClick={() => scrollByCard(1)}
-            className="absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-night/10 bg-surface/90 text-night shadow-[0_6px_18px_-8px_rgba(14,14,14,0.4)] backdrop-blur sm:hidden"
+            className="absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-deep/85 text-white shadow-[0_10px_26px_-12px_rgba(0,0,0,0.9)] backdrop-blur sm:hidden"
           >
-            ›
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden="true">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
           </button>
           <div
             ref={trackRef}
@@ -104,7 +108,7 @@ export default function Casos() {
           {casos.items.map((caso) => (
             <article
               key={caso.name}
-              className="group relative flex-shrink-0 w-[82vw] sm:w-[360px] rounded-2xl overflow-hidden snap-center"
+              className="group relative w-[82vw] flex-shrink-0 snap-center overflow-hidden rounded-2xl border border-white/10 transition-[border-color,box-shadow] duration-300 hover:border-mercury/45 hover:shadow-[0_20px_52px_-28px_rgba(255,90,0,0.6)] sm:w-[360px]"
               style={{ height: "clamp(360px, 48vh, 500px)" }}
             >
               {/* Full-bleed image */}

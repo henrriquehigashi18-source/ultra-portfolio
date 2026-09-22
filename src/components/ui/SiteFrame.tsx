@@ -10,6 +10,7 @@ import RotatingWord from "@/components/animations/RotatingWord";
 export default function SiteFrame() {
   const { frame } = home;
   const [label, setLabel] = useState<string>(frame.defaultLabel);
+  const [onLight, setOnLight] = useState(false);
 
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>("[data-frame-label]");
@@ -32,6 +33,7 @@ export default function SiteFrame() {
         }
         if (best instanceof HTMLElement && best.dataset.frameLabel) {
           setLabel(best.dataset.frameLabel);
+          setOnLight(best.classList.contains("bg-starlight"));
         }
       },
       { threshold: [0, 0.25, 0.5, 0.75, 1] }
@@ -48,8 +50,8 @@ export default function SiteFrame() {
     >
       {/* Pilares — topo direito */}
       <div className="absolute right-8 top-7 flex items-start gap-3">
-        <span className="mt-1 block h-14 w-px bg-mercury/50" />
-        <ul className="space-y-1 text-right text-[0.65rem] font-[500] uppercase tracking-[0.22em] text-night/60">
+        <span className="mt-1 block h-14 w-px bg-mercury/55" />
+        <ul className={`space-y-1 text-right text-[0.65rem] font-[500] uppercase tracking-[0.22em] transition-colors duration-300 ${onLight ? "text-night/55" : "text-white/45"}`}>
           {frame.pillars.map((p) => (
             <li key={p}>{p}</li>
           ))}
@@ -58,19 +60,19 @@ export default function SiteFrame() {
 
       {/* Ticker — base esquerda */}
       <div className="absolute bottom-8 left-8 flex items-center gap-3">
-        <span className="block h-8 w-px bg-mercury/50" />
-        <p className="max-w-[18rem] text-[0.65rem] font-[500] uppercase leading-relaxed tracking-[0.22em] text-night/60">
+        <span className="block h-8 w-px bg-mercury/55" />
+        <p className={`max-w-[18rem] text-[0.65rem] font-[500] uppercase leading-relaxed tracking-[0.22em] transition-colors duration-300 ${onLight ? "text-night/55" : "text-white/45"}`}>
           {frame.ticker.prefix}{" "}
-          <RotatingWord words={frame.ticker.words} className="text-night/80" />
+          <RotatingWord words={frame.ticker.words} className={onLight ? "text-night/80" : "text-white/75"} />
         </p>
       </div>
 
       {/* Rótulo contextual — base direita, à esquerda do botão flutuante */}
       <div className="absolute bottom-8 right-28 flex items-center gap-3">
-        <p className="max-w-[18rem] text-right text-[0.65rem] font-[500] uppercase leading-relaxed tracking-[0.22em] text-night/60">
+        <p className={`max-w-[18rem] text-right text-[0.65rem] font-[500] uppercase leading-relaxed tracking-[0.22em] transition-colors duration-300 ${onLight ? "text-night/55" : "text-white/45"}`}>
           {label}
         </p>
-        <span className="block h-8 w-px bg-mercury/50" />
+        <span className="block h-8 w-px bg-mercury/55" />
       </div>
     </div>
   );

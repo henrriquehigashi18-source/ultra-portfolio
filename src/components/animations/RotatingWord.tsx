@@ -14,15 +14,10 @@ const HOLD_MS = 1600; // tempo que a palavra completa permanece
 // Apaga e reescreve a última palavra, alternando a lista em loop.
 export default function RotatingWord({ words, className = "" }: RotatingWordProps) {
   const [text, setText] = useState(words[0]);
-  const [showCaret, setShowCaret] = useState(true);
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
-      setShowCaret(false);
-      setText(words[0]);
-      return;
-    }
+    if (reduced) return;
 
     let wordIndex = 0;
     let charIndex = words[0].length;
@@ -61,11 +56,9 @@ export default function RotatingWord({ words, className = "" }: RotatingWordProp
   return (
     <span className={className}>
       {text}
-      {showCaret && (
-        <span aria-hidden="true" className="rotating-caret text-mercury">
-          |
-        </span>
-      )}
+      <span aria-hidden="true" className="rotating-caret text-mercury">
+        |
+      </span>
     </span>
   );
 }

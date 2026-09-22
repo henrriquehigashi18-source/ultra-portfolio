@@ -4,7 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 
 export const viewport: Viewport = {
-  themeColor: "#0e0e0e",
+  themeColor: "#080808",
 };
 
 // Satoshi — corpo/UI (variável). Par premium da Clash Display.

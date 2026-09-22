@@ -27,7 +27,7 @@ export const home = {
   heroEditorial: {
     frameLabel: "Veja por que confiam na gente ↓",
     sideLeft: ["Design", "Automação", "Tráfego", "Tecnologia"],
-    sideRight: ["Resultado", "com propósito"],
+    sideRight: ["Do Google", "ao WhatsApp"],
     // Cada item vira uma linha; `strong: true` recebe peso bold.
     left: [
       { text: "Seu trabalho", strong: false },
@@ -48,75 +48,67 @@ export const home = {
       "Seu trabalho é excelente, mas quem te procura na internet não vê isso. Vamos mudar isso?",
   },
 
-  // [PLACEHOLDER — depoimento fictício: substituir pelo depoimento real de cliente]
-  provaSocial: {
-    quote:
-      "Antes, o WhatsApp ficava dias no silêncio. Hoje chega mensagem de cliente novo toda semana, e a maioria já vem sabendo o que quer.",
-    author: "Mariana C.",
-    role: "Doces artesanais por encomenda",
-  },
-
   dor: {
-    frameLabel: "Confiança em cada etapa",
+    frameLabel: "Onde o cliente escapa",
     eyebrow: "Desafios reais",
     sideRight: ["Do problema", "à oportunidade"],
     title: "Você se reconhece em",
     titleStrong: "alguma dessas situações?",
     subtitle:
-      "Antes de comprar, o seu cliente pesquisa, compara e decide. Veja onde você pode estar perdendo oportunidades.",
+      "Seu cliente pesquisa, compara e decide antes de te procurar. Veja onde ele desiste.",
     items: [
       {
         title: 'Ele pesquisa "perto de mim", e você não aparece.',
-        body: "Quando sua empresa não está bem posicionada, o cliente nem chega a considerar o seu negócio.",
+        body: "Quem não aparece na busca não é comparado. É ignorado.",
       },
       {
         title: "Ele vê seu conteúdo, se interessa… e some.",
-        body: "Sem uma jornada clara, um atendimento ágil e um caminho simples para contato, o interesse não vira oportunidade.",
+        body: "Interesse sem caminho para o contato evapora em minutos.",
       },
       {
         title: "Seu concorrente chega primeiro.",
-        body: "Nem sempre vence o melhor. Às vezes, vence quem aparece antes, se comunica melhor e facilita o contato.",
+        body: "Não vence o melhor. Vence quem aparece antes e responde primeiro.",
       },
     ],
     outro: {
       lead: "É exatamente aí que a",
       brand: "BL Swell",
       leadEnd: "entra.",
-      body: "Estratégia, tecnologia e presença digital trabalhando juntas para transformar atenção em oportunidades.",
+      body: "Estratégia, tecnologia e presença digital para transformar atenção em cliente.",
     },
   },
 
   solucao: {
-    frameLabel: "Ideias em movimento",
+    frameLabel: "O circuito completo",
     eyebrow: "Serviços",
     title: "Não é um site bonito. É o seu melhor vendedor, disponível 24h.",
     intro:
-      "O que a BL Swell monta para o seu negócio é o circuito completo: ser encontrado, conversar e agendar.",
+      "Cada peça fecha um ponto de fuga: da busca no Google ao horário marcado na agenda.",
     items: [
       {
         icon: "search",
         title: "Seu cliente te acha no Google",
-        body: "Site rápido e preparado para a busca local, com Google Business configurado. Quem procura o que você faz, te encontra.",
+        body: "Site rápido, busca local configurada, Google Business no ar. Quem procura, te acha.",
       },
       {
         icon: "chat",
         title: "A conversa começa em um toque",
-        body: "Botão de WhatsApp no lugar certo, com mensagem pronta. Do interesse à conversa, sem formulário e sem fricção.",
+        body: "Botão de WhatsApp no lugar certo, com mensagem pronta. Sem formulário, sem fricção.",
       },
       {
         icon: "clock",
         title: "Atendimento que não dorme",
-        body: "Automação no WhatsApp que responde na hora, tira dúvidas e encaminha o agendamento, mesmo fora do horário comercial.",
+        body: "Automação que responde na hora, tira dúvida e encaminha o agendamento. Inclusive às 23h de domingo.",
       },
       {
         icon: "calendar",
         title: "Agenda cheia sem depender da recepção",
-        body: "Agendamento com lembrete automático: menos esquecimento, menos falta, mais horário preenchido.",
+        body: "Agendamento com lembrete automático. Menos falta, mais horário preenchido.",
       },
       {
         icon: "target",
         title: "Cliente chegando todo dia, não só quando dá sorte",
-        body: "Gestão de tráfego pago (Google e Meta) mirando quem já está pronto para comprar na sua região. Verba controlada, resultado medido.",
+        body: "Anúncios no Google e no Meta para quem já está pronto para comprar perto de você. Verba controlada, resultado medido.",
       },
     ],
     diferencial: {
@@ -127,11 +119,11 @@ export const home = {
   },
 
   casos: {
-    frameLabel: "Confiança em cada etapa",
+    frameLabel: "Resultado que dá pra medir",
     title: "Casos de",
     titleStrong: "sucesso",
     subtitle:
-      "Segmentos diferentes, método igual: entender o negócio, remover o atrito e transformar interesse em conversa.",
+      "Segmentos diferentes, mesmo método: entender o negócio, remover o atrito e transformar interesse em conversa.",
     dragHint: "Role para ver mais casos",
     cta: "Quero um resultado assim",
     ctaMessage:
@@ -187,15 +179,15 @@ export const home = {
     steps: [
       {
         title: "Diagnóstico gratuito",
-        body: "Uma conversa no WhatsApp para entender o seu negócio e onde você está perdendo cliente hoje. Sem compromisso.",
+        body: "Uma conversa no WhatsApp para achar onde você perde cliente hoje. Sem compromisso.",
       },
       {
         title: "Proposta fechada",
-        body: "Escopo, prazo e preço por escrito em até 48h. Você sabe exatamente o que vai receber antes de começar.",
+        body: "Escopo, prazo e preço por escrito em até 48h. Você aprova antes de começar.",
       },
       {
         title: "Entrega com acompanhamento",
-        body: "Site no ar, automação funcionando, sua equipe treinada, com 30 dias de ajustes inclusos.",
+        body: "Site no ar, automação rodando, equipe treinada. 30 dias de ajustes inclusos.",
       },
     ],
   },
@@ -219,7 +211,7 @@ export const home = {
     ],
     outro: {
       title: "Outro segmento?",
-      body: "O método se adapta. Me conta o seu caso.",
+      body: "O método se adapta. Conta pra gente.",
       message: "Olá! Meu negócio é de outro segmento, quero saber se funciona para mim",
     },
   },
@@ -229,16 +221,16 @@ export const home = {
     eyebrow: "Quem está por trás",
     title: "Os",
     titleStrong: "sócios",
-    lead: "Ser bom não é suficiente",
-    leadStrong: "se ninguém te vê.",
+    lead: "Agência pequena",
+    leadStrong: "por escolha.",
     intro:
-      "Seu trabalho pode ser excelente. Mas é a sua presença digital que faz o cliente te encontrar, confiar e dar o próximo passo.",
+      "Cada ponta tem um dono: um conversa, o outro executa. Sem time rotativo, sem projeto passado adiante.",
     closing: "Você fala direto com os dois.",
     closingStrong: "Sem intermediários.",
     // Usados pelo bloco final de CTA (CtaFinal.tsx) — não mexer no conteúdo, só reaproveitado ali.
     bullets: [
-      "Atendimento direto com quem executa",
-      "Explicação em português claro, sem tecniquês",
+      "Atendimento direto com os sócios",
+      "Português claro, sem tecniquês",
       "Do Rio Grande do Norte para todo o Brasil",
     ],
     people: [
@@ -265,7 +257,7 @@ export const home = {
     headline: "A busca não para",
     headlineRest: "enquanto",
     headlineStrong: "você decide.",
-    body: "Neste momento, o Google está entregando o seu próximo cliente para alguém. Uma mensagem é o que separa esse alguém de você,",
+    body: "Agora mesmo, o Google está entregando o seu próximo cliente para o seu concorrente. Uma mensagem muda isso,",
     bodyStrong: "e o diagnóstico é gratuito.",
     cta: "Iniciar conversa no WhatsApp",
     trust: "Resposta em até 24h úteis · Sem compromisso",

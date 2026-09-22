@@ -6,12 +6,12 @@ import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 export default function Footer() {
   const { footer } = home;
   return (
-    <footer className="border-t border-night/10 bg-[#e7e5e4]">
+    <footer className="border-t border-white/10 bg-[#050505] text-starlight">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-12 sm:px-8">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
-          <div className="text-night">
+          <div className="text-starlight">
             <Logo />
-            <p className="mt-2 text-sm tracking-[0.02em] text-night/60">
+            <p className="mt-2 text-sm tracking-[0.02em] text-white/50">
               {footer.tagline}
             </p>
           </div>
@@ -21,7 +21,7 @@ export default function Footer() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2.5 text-night/65 transition-colors hover:text-night"
+                className="inline-flex min-h-11 items-center gap-2.5 text-white/60 transition-colors hover:text-white"
               >
                 <WhatsAppIcon className="h-5 w-5 text-mercury" />
                 {footer.whatsappLabel}
@@ -32,7 +32,7 @@ export default function Footer() {
                 href={footer.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2.5 text-night/65 transition-colors hover:text-night"
+                className="inline-flex min-h-11 items-center gap-2.5 text-white/60 transition-colors hover:text-white"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -54,7 +54,7 @@ export default function Footer() {
             <li>
               <a
                 href={`mailto:${footer.email}`}
-                className="inline-flex min-h-11 items-center gap-2.5 text-night/65 transition-colors hover:text-night"
+                className="inline-flex min-h-11 items-center gap-2.5 text-white/60 transition-colors hover:text-white"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -74,7 +74,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <p className="mt-8 border-t border-night/10 pt-6 text-sm tracking-[0.02em] text-night/70">
+        <p className="mt-8 border-t border-white/10 pt-6 text-sm tracking-[0.02em] text-white/50">
           © {new Date().getFullYear()} BL Swell. Todos os direitos reservados.
         </p>
       </div>

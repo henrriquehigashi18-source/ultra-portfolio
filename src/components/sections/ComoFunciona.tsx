@@ -24,7 +24,7 @@ export default function ComoFunciona() {
     <section
       id="como-funciona"
       data-frame-label={comoFunciona.frameLabel}
-      className="relative overflow-hidden bg-canvas"
+      className="relative overflow-hidden bg-starlight text-night"
     >
       <WaveBackdrop heightClass="h-[34%]" opacityClass="opacity-40" />
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
@@ -45,7 +45,7 @@ export default function ComoFunciona() {
           {comoFunciona.steps.map((step, i) => (
             <article
               key={step.title}
-              className="group relative overflow-hidden rounded-2xl border border-night/8 bg-surface p-7 shadow-[0_1px_2px_rgba(14,14,14,0.04)] transition-[transform,box-shadow] duration-300 before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-[3px] before:bg-mercury before:opacity-0 before:transition-opacity before:duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_-14px_rgba(14,14,14,0.22)] hover:before:opacity-100"
+              className="group relative overflow-hidden rounded-2xl border border-night/10 bg-white p-7 shadow-[0_16px_38px_-30px_rgba(14,14,14,0.5)] transition-[transform,box-shadow,border-color] duration-300 before:absolute before:inset-x-0 before:top-0 before:z-10 before:h-[3px] before:bg-mercury before:opacity-60 before:transition-opacity before:duration-300 hover:-translate-y-1 hover:border-mercury/30 hover:shadow-[0_18px_42px_-28px_rgba(255,90,0,0.45)] hover:before:opacity-100"
             >
               <span
                 aria-hidden="true"
@@ -53,7 +53,7 @@ export default function ComoFunciona() {
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="relative flex h-12 w-12 items-center justify-center rounded-lg border border-night/12 bg-surface shadow-[0_1px_2px_rgba(14,14,14,0.04)]">
+              <span className="relative flex h-12 w-12 items-center justify-center rounded-lg border border-night/12 bg-white shadow-[0_8px_20px_-16px_rgba(14,14,14,0.55)]">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"

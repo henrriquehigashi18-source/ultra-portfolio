@@ -39,7 +39,7 @@ export default function Solucao() {
     <section
       id="servicos"
       data-frame-label={solucao.frameLabel}
-      className="relative overflow-hidden bg-canvas"
+      className="relative overflow-hidden bg-starlight text-night"
     >
       <WaveBackdrop heightClass="h-[30%]" opacityClass="opacity-40" />
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
@@ -58,7 +58,7 @@ export default function Solucao() {
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-night/65">
               {solucao.intro}
             </p>
-            <div className="mt-8 rounded-2xl border border-night/8 bg-surface p-7 shadow-[0_1px_2px_rgba(14,14,14,0.04)]">
+            <div className="mt-8 rounded-2xl border border-night/10 bg-white p-7 shadow-[0_18px_42px_-32px_rgba(14,14,14,0.45)]">
               <p className="text-lg font-[700] text-night">
                 {solucao.diferencial.lead}{" "}
                 <span className="font-[400] text-night/60">{solucao.diferencial.body}</span>
@@ -86,7 +86,7 @@ export default function Solucao() {
             <ScrollReveal stagger className="flex flex-col gap-10">
               {solucao.items.map((item) => (
                 <article key={item.title} className="relative flex gap-5">
-                  <span className="z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-night/12 bg-surface shadow-[0_1px_2px_rgba(14,14,14,0.04)]">
+                  <span className="z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-night/12 bg-white shadow-[0_8px_22px_-16px_rgba(14,14,14,0.5)]">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
