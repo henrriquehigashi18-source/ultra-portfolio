@@ -53,24 +53,17 @@ export default function SobreMim() {
             </dl>
           </ScrollReveal>
 
-          {/* Fotos + fecho */}
+          {/* Foto conjunta + fecho */}
           <ScrollReveal>
-            <div className="grid grid-cols-2 gap-5">
-              {sobreMim.people.map((person) => (
-                <div
-                  key={person.name}
-                  className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-graphite"
-                >
-                  <Image
-                    src={person.photo}
-                    alt={person.photoAlt}
-                    fill
-                    sizes="(min-width: 1024px) 320px, 50vw"
-                    className="object-cover"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-white/[0.04]" />
-                </div>
-              ))}
+            <div className="relative aspect-[1105/1280] overflow-hidden rounded-2xl border border-white/10 bg-graphite">
+              <Image
+                src={sobreMim.groupPhoto}
+                alt={sobreMim.groupPhotoAlt}
+                fill
+                sizes="(min-width: 1200px) 667px, (min-width: 1024px) 55vw, calc(100vw - 2.5rem)"
+                className="object-cover object-center"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-white/[0.04]" />
             </div>
             <p className="font-display mt-8 text-2xl font-[400] leading-snug tracking-[-0.01em] text-starlight sm:text-3xl">
               {sobreMim.closing}{" "}

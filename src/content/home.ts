@@ -224,9 +224,11 @@ export const home = {
     lead: "Agência pequena",
     leadStrong: "por escolha.",
     intro:
-      "Cada ponta tem um dono: um conversa, o outro executa. Sem time rotativo, sem projeto passado adiante.",
-    closing: "Você fala direto com os dois.",
+      "Cada frente tem um sócio responsável. Estratégia, tecnologia e marketing trabalham juntos do primeiro contato ao crescimento.",
+    closing: "Você fala direto com os três.",
     closingStrong: "Sem intermediários.",
+    groupPhoto: "/socios-blswell.jpg",
+    groupPhotoAlt: "Neto, Paulo e Felipe, sócios da BL Swell",
     // Usados pelo bloco final de CTA (CtaFinal.tsx) — não mexer no conteúdo, só reaproveitado ali.
     bullets: [
       "Atendimento direto com os sócios",
@@ -235,18 +237,19 @@ export const home = {
     ],
     people: [
       {
-        name: "Felipe",
-        role: "Estratégia e relacionamento",
-        body: "Entende o negócio e qualifica cada projeto.",
-        photo: "/felipe-bernardo.jpg",
-        photoAlt: "Felipe Bernardo, sócio da BL Swell",
+        name: "Neto",
+        role: "Marketing e crescimento",
+        body: "Cuida do posicionamento, da comunicação e das ações de crescimento.",
       },
       {
         name: "Paulo",
         role: "Tecnologia e operação",
-        body: "Sites, automações e tráfego pago.",
-        photo: "/paulo-henrique.jpeg",
-        photoAlt: "Paulo Henrique, sócio da BL Swell",
+        body: "Sites, automações e operação técnica.",
+      },
+      {
+        name: "Felipe",
+        role: "Estratégia e relacionamento",
+        body: "Entende o negócio e qualifica cada projeto.",
       },
     ],
   },
