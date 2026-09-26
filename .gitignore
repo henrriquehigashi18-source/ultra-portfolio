@@ -42,4 +42,8 @@ next-env.d.ts
 
 # relatorios lighthouse
 lighthouse-*.json
+
+# ferramentas locais de desenvolvimento
+/.worktrees/
+/.superpowers/
 .vercel
